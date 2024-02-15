@@ -3,13 +3,23 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
+<!--TODO: center links to the center of the page
+maybe have a dropdown menu for different departments to declutter -->
+
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="title">
+			<img src="/favicon.webp" alt="MHSeals Logo" width="64" height="64" />
+			<h2><a href="/">{SITE_TITLE}</a></h2>
+		</div>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/captains">Department Captains</HeaderLink>
+			<HeaderLink href="/cs">Computer Science</HeaderLink>
+			<HeaderLink href="/engineering">Engineering</HeaderLink>
+			<HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
 		<div class="social-links">
 			<a href="https://www.instagram.com/mhs_roboboat/" target="_blank">
@@ -37,9 +47,15 @@ import { SITE_TITLE } from '../consts';
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
+
+	.title {
+		display: flex;
+		align-items: center;
+	}
+
 	h2 {
 		margin: 0;
-		font-size: 1em;
+		font-size: 1.4em;
 	}
 
 	h2 a,
@@ -56,15 +72,22 @@ import { SITE_TITLE } from '../consts';
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		transition: all 0.2s ease;
 	}
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
+
+	nav a:hover {
+		color: var(--accent);
+	}
+
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
+
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
