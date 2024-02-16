@@ -15,34 +15,120 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			<h1>Our team</h1>
 			<p>
-				Welcome to the MHS Seals website.
+				Our team is made up of primarily 4 departmens: Engineering, Computer Science, Electrical Engineering,
+				and Marketing. Each department has its own unique role in the team, and each department is essential
+				to the success of the team. The Engineering department is responsible for designing and building the
+				boat. The Computer Science department is responsible for creating the vision and control systems for
+				the boat. The Electrical Engineering department is responsible for the electrical systems of the boat.
+				The Marketing department is responsible for promoting the team and the competition, as well as finding
+				sponsors and partners for the team.
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<h3 class="center">Captains</h3>
+			<div class="captains">
+				<div class="captain-card">
+					<img src="/captains/president.webp" alt="President" />
+					<div class="content">
+						<h4>President</h4>
+						<p>Karmen Chandler</p>
+					</div>
+					<a href="mailto:chand450704@student.aisd.net">Email</a>
+				</div>
+				<div class="captain-card">
+					<img src="/captains/vice_president.webp" alt="Vice President" />
+					<div class="content">
+						<h4>Vice President</h4>
+						<p>Hudson Nguyen</p>
+					</div>
+					<a href="mailto:nguye532016@student.aisd.net">Email</a>
+				</div>
+				<div class="captain-card">
+					<img src="/captains/cs.webp" alt="Computer Science" />
+					<div class="content">
+						<h4>Computer Science</h4>
+						<p>Emilio Reza</p>
+					</div>
+					<a href="mailto:reza418688@student.aisd.net">Email</a>
+				</div>
+				<div class="captain-card">
+					<img src="/captains/engineering.webp" alt="Engineering" />
+					<div class="content">
+						<h4>Engineering</h4>
+						<p>Christopher Gonzalez</p>
+					</div>
+					<a href="mailto:">Email</a>
+				</div>
+				<div class="captain-card">
+					<img src="/captains/ee.webp" alt="Electrical Engineering" />
+					<div class="content">
+						<h4>Electrical Engineering</h4>
+						<p>Sebastian Rodriguez</p>
+					</div>
+					<a href="mailto:rodri369159@student.aisd.net">Email</a>
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.center {
+		text-align: center;
+	}
+
+	.captains {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
+	.captain-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		height: 100%;
+		margin-top: 2em;
+		box-sizing: border-box;
+		width: 200px;
+		margin: 1em;
+	}
+	.captain-card img {
+		height: 200px;
+		width: 200px;
+		object-fit: scale-down;
+		border-radius: 50%;
+		border-color: var(--accent);
+		border-width: 5px;
+		border-style: solid;
+	}
+	.captain-card .content {
+		width: 100%;
+		height: 130px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.captain-card h4 {
+		margin: 0;
+		max-width: 90%;
+		margin-top: 0.5em;
+	}
+	.captain-card p {
+		margin: 0;
+	}
+
+	.captain-card a {
+		display: block;
+		color: white;
+		background-color: var(--accent);
+		text-decoration: none;
+		padding: 0.5em 1em;
+		border-radius: 12px;
+		transition: all 0.2s ease;
+	}
+
+	.captain-card a:hover {
+		background-color: var(--accent-dark);
+	}
+</style>
