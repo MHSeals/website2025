@@ -8,6 +8,8 @@ import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+).filter(
+	(post) => !post.slug.startsWith('-')
 );
 ---
 
@@ -68,6 +70,10 @@ const posts = (await getCollection('blog')).sort(
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
 			}
+			.alt-message {
+				text-align: center;
+				margin-top: 2rem;
+			}
 			@media (max-width: 720px) {
 				ul {
 					gap: 0.5em;
@@ -85,10 +91,20 @@ const posts = (await getCollection('blog')).sort(
 			}
 		</style>
 	</head>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const altMessage = document.querySelector('.alt-message');
+			const posts = document.querySelectorAll('ul li');
+			if (posts.length === 0) {
+				altMessage.removeAttribute('hidden');
+			}
+		});
+	</script>
 	<body>
 		<Header />
 		<main>
 			<section>
+				<h2 class="alt-message" hidden>It looks like there are no posts yet!</h2>
 				<ul>
 					{
 						posts.map((post) => (

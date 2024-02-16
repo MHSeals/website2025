@@ -3,8 +3,7 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<!--TODO: center links to the center of the page
-maybe have a dropdown menu for different departments to declutter -->
+<!--TODO: mobile hamburger menu -->
 
 <header>
 	<nav>
@@ -15,10 +14,15 @@ maybe have a dropdown menu for different departments to declutter -->
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/captains">Department Captains</HeaderLink>
-			<HeaderLink href="/cs">Computer Science</HeaderLink>
-			<HeaderLink href="/engineering">Engineering</HeaderLink>
-			<HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
+			<div class="dropdown">
+				<HeaderLink href="/team">Team</HeaderLink>
+				<div class="dropdown-content">
+					<HeaderLink href="/cs">Computer Science</HeaderLink>
+					<HeaderLink href="/engineering">Engineering</HeaderLink>
+					<HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
+					<HeaderLink href="/marketing">Marketing</HeaderLink>
+				</div>
+			</div>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
 		<div class="social-links">
@@ -83,9 +87,43 @@ maybe have a dropdown menu for different departments to declutter -->
 		color: var(--accent);
 	}
 
+	.internal-links {
+		display: flex;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%); 
+
+	}
+
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: white;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
+
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
 	.social-links,
 	.social-links a {
 		display: flex;
+		align-items: center;
 	}
 
 	@media (max-width: 720px) {

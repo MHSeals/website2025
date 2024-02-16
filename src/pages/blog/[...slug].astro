@@ -3,7 +3,11 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	var posts = await getCollection('blog');
+	
+	// if post name starts with - it will be ignored
+	posts = posts.filter((post) => !post.slug.startsWith('-'));
+
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
