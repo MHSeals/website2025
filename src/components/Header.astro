@@ -25,6 +25,19 @@ import { SITE_TITLE } from '../consts';
 			</div>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
+		<div class="mobile-links" id="mobile-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/team">Team</HeaderLink>
+			<HeaderLink href="/cs">Computer Science</HeaderLink>
+			<HeaderLink href="/engineering">Engineering</HeaderLink>
+			<HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
+			<HeaderLink href="/marketing">Marketing</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+		</div>
+		<a href="javascript:void(0);" class="icon" id="hamburger">
+			<i class="fa fa-bars"></i>
+		</a>
 		<div class="social-links">
 			<a href="https://www.instagram.com/mhs_roboboat/" target="_blank">
 				<span class="sr-only">Follow MHS Seals on Instagram</span>
@@ -44,12 +57,25 @@ import { SITE_TITLE } from '../consts';
 		</div>
 	</nav>
 </header>
+<script>
+function hamburger() {
+	var x = document.getElementById("mobile-links");
+	if (x.style.display === "block") {
+		x.style.display = "none";
+	} else {
+		x.style.display = "block";
+	}
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+	document.getElementById("hamburger").addEventListener("click", hamburger);
+});
+</script>
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		margin-bottom: 3em;
 	}
 
 	.title {
@@ -70,6 +96,13 @@ import { SITE_TITLE } from '../consts';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		overflow: hidden;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 100;
 	}
 	nav a {
 		padding: 1em 0.5em;
@@ -126,9 +159,61 @@ import { SITE_TITLE } from '../consts';
 		align-items: center;
 	}
 
+	.social-links {
+		margin-right: 2em;
+	}
+
+	.icon {
+		display: none;
+	}
+
+	.mobile-links {
+		display: none;
+	}
+
 	@media (max-width: 720px) {
+		header {
+			margin-bottom: 4em;
+		}
+
+		nav {
+			left: 0;
+		}
+
 		.social-links {
 			display: none;
+		}
+
+		.icon {
+			display: block;
+			height: 100%;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			margin: 0 1em;
+			color: var(--black);
+		}
+
+		.icon:hover {
+			color: var(--accent);
+		}
+
+		.icon i {
+			font-size: 1.5em;
+		}
+
+		.internal-links {
+			display: none;
+		}
+
+		.mobile-links {
+			position: fixed;
+			background: white;
+			width: 100%;
+			top: 3.5em;
+			box-shadow: 0 2px 8px rgba(var(--black), 5%);
+			overflow: hidden;
+			z-index: 100;
 		}
 	}
 </style>
