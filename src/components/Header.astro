@@ -8,7 +8,7 @@ import { SITE_TITLE } from '../consts';
 <header>
 	<nav>
 		<div class="title">
-			<img src="/favicon.webp" alt="MHSeals Logo" width="64" height="64" />
+			<img id="logo" src="/favicon.webp" alt="MHSeals Logo" width="64" height="64" />
 			<h2><a href="/">{SITE_TITLE}</a></h2>
 		</div>
 		<div class="internal-links">
@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	h2 a.active {
 		text-decoration: none;
 	}
+
 	nav {
 		display: flex;
 		align-items: center;
@@ -107,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		z-index: 100;
 		left: 0;
 	}
+
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
@@ -114,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		text-decoration: none;
 		transition: all 0.2s ease;
 	}
+	
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
@@ -166,6 +169,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	.icon {
+		display: none;
+	}
+
+	.mobile-links {
 		display: none;
 	}
 

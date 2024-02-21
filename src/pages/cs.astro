@@ -19,6 +19,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				We use a depth-sensing camera to detect buoys and other obstacles, GPS to make sure that we're always on the right course,
 				and LiDAR to detect obstacles in the water. We also have various other sensors to detect movement, heading, and other important data.
 				We use Python and ROS2 to control the boat and process the data from the sensors. We have a CV model that we use to detect buoys and other obstacles.
+				To make the CV model, we use Roboflow to label the data and then we use transfer learning to train the model on top of YOLOv8s.
 				The LiDAR data is clustered to detect obstacles in the water. Once we have our CV and LiDAR data, we detect the angle and distance to the buoys and obstacles
 				to correlate what our camera sees with what our LiDAR sees. We then use this data to navigate the boat around the obstacles and to the buoys.
 			</p>
