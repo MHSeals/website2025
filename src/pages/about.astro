@@ -1,41 +1,30 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>About Us</h1>
-			<p>
-				Welcome to the MHS Seals! We are a Roboboat team from James Martin High School in Arlington, Texas.
-				We are currently the only high school team in the Roboboat competition, and we are proud to
-				represent our school and our community. We are a team of students who are passionate about
-				robotics, engineering, and computer science. We are excited to compete in the Roboboat competition
-				and to learn from the experience. We are also excited to share our journey with you, and we hope
-				that you will follow along with us as we prepare for the competition.
-			</p>
-			<img src="/2024team.jpg" alt="2024 Team" />
-			<p>
-				Our team is made up of primarily 4 departmens: Engineering, Computer Science, Electrical Engineering,
-				and Marketing. Each department has its own unique role in the team, and each department is essential
-				to the success of the team. The Engineering department is responsible for designing and building the
-				boat. The Computer Science department is responsible for creating the vision and control systems for
-				the boat. The Electrical Engineering department is responsible for the electrical systems of the boat.
-				The Marketing department is responsible for promoting the team and the competition, as well as finding
-				sponsors and partners for the team.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<main>
+		<h1>About Us</h1>
+		<p>
+			Welcome to the MHS Seals! We are a Roboboat team from James Martin High School in Arlington, Texas.
+			We are currently the only high school team in the Roboboat competition, and we are proud to
+			represent our school and our community. We are a team of students who are passionate about
+			robotics, engineering, and computer science. We are excited to compete in the Roboboat competition
+			and to learn from the experience. We are also excited to share our journey with you, and we hope
+			that you will follow along with us as we prepare for the competition.
+		</p>
+		<img src="/2024team.jpg" alt="2024 Team" />
+		<p>
+			Our team is made up of primarily 4 departmens: Engineering, Computer Science, Electrical Engineering,
+			and Marketing. Each department has its own unique role in the team, and each department is essential
+			to the success of the team. The Engineering department is responsible for designing and building the
+			boat. The Computer Science department is responsible for creating the vision and control systems for
+			the boat. The Electrical Engineering department is responsible for the electrical systems of the boat.
+			The Marketing department is responsible for promoting the team and the competition, as well as finding
+			sponsors and partners for the team.
+		</p>
+	</main>
+</Layout>
 
 <style>
 	ul {

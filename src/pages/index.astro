@@ -1,39 +1,28 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🦭 MHS Seals</h1>
-			<p>
-				Welcome to the MHS Seals! We are a Roboboat team from James Martin High School in Arlington, Texas.
-				We are currently the only high school team in the Roboboat competition, and we are proud to
-				represent our school and our community. We are a team of students who are passionate about
-				robotics, engineering, and computer science. We are excited to compete in the Roboboat competition
-				and to learn from the experience. We are also excited to share our journey with you, and we hope
-				that you will follow along with us as we prepare for the competition.
-			</p>
-			<h3>Departments</h3>
-			<ul>
-				<li><a href="/cs">Computer Science</a></li>
-				<li><a href="/engineering">Engineering</a></li>
-				<li><a href="/electrical">Electrical</a></li>
-				<li><a href="/marketing">Marketing</a></li>
-			</ul>
-			<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S5ki5BaswGs?si=HMFzN0wlVGPxlbQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<main>
+		<h1>&#129453; MHS Seals</h1>
+		<p>
+			Welcome to the MHS Seals! We are a Roboboat team from James Martin High School in Arlington, Texas.
+			We are currently the only high school team in the Roboboat competition, and we are proud to
+			represent our school and our community. We are a team of students who are passionate about
+			robotics, engineering, and computer science. We are excited to compete in the Roboboat competition
+			and to learn from the experience. We are also excited to share our journey with you, and we hope
+			that you will follow along with us as we prepare for the competition.
+		</p>
+		<h3>Departments</h3>
+		<ul>
+			<li><a href="/cs">Computer Science</a></li>
+			<li><a href="/engineering">Engineering</a></li>
+			<li><a href="/electrical">Electrical</a></li>
+			<li><a href="/marketing">Marketing</a></li>
+		</ul>
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S5ki5BaswGs?si=HMFzN0wlVGPxlbQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	</main>
+</Layout>
 
 <style>
 	ul {

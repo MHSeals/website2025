@@ -1,83 +1,72 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Our team</h1>
-			<p>
-				Our team is made up of primarily 4 departmens: Engineering, Computer Science, Electrical Engineering,
-				and Marketing. Each department has its own unique role in the team, and each department is essential
-				to the success of the team. The Engineering department is responsible for designing and building the
-				boat. The Computer Science department is responsible for creating the vision and control systems for
-				the boat. The Electrical Engineering department is responsible for the electrical systems of the boat.
-				The Marketing department is responsible for promoting the team and the competition, as well as finding
-				sponsors and partners for the team.
-			</p>
-			<h3 class="center">Captains</h3>
-			<div class="captains">
-				<div class="captain-card">
-					<img src="/captains/president.webp" alt="President" />
-					<div class="content">
-						<h4>President</h4>
-						<p>Karmen Chandler</p>
-					</div>
-					<a href="mailto:chand450704@student.aisd.net">Email</a>
+<Layout>
+	<main>
+		<h1>Our team</h1>
+		<p>
+			Our team is made up of primarily 4 departmens: Engineering, Computer Science, Electrical Engineering,
+			and Marketing. Each department has its own unique role in the team, and each department is essential
+			to the success of the team. The Engineering department is responsible for designing and building the
+			boat. The Computer Science department is responsible for creating the vision and control systems for
+			the boat. The Electrical Engineering department is responsible for the electrical systems of the boat.
+			The Marketing department is responsible for promoting the team and the competition, as well as finding
+			sponsors and partners for the team.
+		</p>
+		<h3 class="center">Captains</h3>
+		<div class="captains">
+			<div class="captain-card">
+				<img src="/captains/president.webp" alt="President" />
+				<div class="content">
+					<h4>President</h4>
+					<p>Karmen Chandler</p>
 				</div>
-				<div class="captain-card">
-					<img src="/captains/vice_president.webp" alt="Vice President" />
-					<div class="content">
-						<h4>Vice President</h4>
-						<p>Hudson Nguyen</p>
-					</div>
-					<a href="mailto:nguye532016@student.aisd.net">Email</a>
-				</div>
-				<div class="captain-card">
-					<img src="/captains/cs.webp" alt="Computer Science" />
-					<div class="content">
-						<h4>Computer Science</h4>
-						<p>Emilio Reza</p>
-					</div>
-					<a href="mailto:reza418688@student.aisd.net">Email</a>
-				</div>
-				<div class="captain-card">
-					<img src="/captains/engineering.webp" alt="Engineering" />
-					<div class="content">
-						<h4>Engineering</h4>
-						<p>Christopher Gonzalez</p>
-					</div>
-					<a href="mailto:gonza426754@student.aisd.net">Email</a>
-				</div>
-				<div class="captain-card">
-					<img src="/captains/ee.webp" alt="Electrical Engineering" />
-					<div class="content">
-						<h4>Electrical Engineering</h4>
-						<p>Sebastian Rodriguez</p>
-					</div>
-					<a href="mailto:rodri369159@student.aisd.net">Email</a>
-				</div>
-				<div class="captain-card">
-					<img src="/captains/marketing.webp" alt="Marketing" />
-					<div class="content">
-						<h4>Marketing</h4>
-						<p>Alejandra Jimenez</p>
-					</div>
-					<a href="mailto:jimen411290@student.aisd.net">Email</a>
-				</div>
+				<a href="mailto:chand450704@student.aisd.net">Email</a>
 			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<div class="captain-card">
+				<img src="/captains/vice_president.webp" alt="Vice President" />
+				<div class="content">
+					<h4>Vice President</h4>
+					<p>Hudson Nguyen</p>
+				</div>
+				<a href="mailto:nguye532016@student.aisd.net">Email</a>
+			</div>
+			<div class="captain-card">
+				<img src="/captains/cs.webp" alt="Computer Science" />
+				<div class="content">
+					<h4>Computer Science</h4>
+					<p>Emilio Reza</p>
+				</div>
+				<a href="mailto:reza418688@student.aisd.net">Email</a>
+			</div>
+			<div class="captain-card">
+				<img src="/captains/engineering.webp" alt="Engineering" />
+				<div class="content">
+					<h4>Engineering</h4>
+					<p>Christopher Gonzalez</p>
+				</div>
+				<a href="mailto:gonza426754@student.aisd.net">Email</a>
+			</div>
+			<div class="captain-card">
+				<img src="/captains/ee.webp" alt="Electrical Engineering" />
+				<div class="content">
+					<h4>Electrical Engineering</h4>
+					<p>Sebastian Rodriguez</p>
+				</div>
+				<a href="mailto:rodri369159@student.aisd.net">Email</a>
+			</div>
+			<div class="captain-card">
+				<img src="/captains/marketing.webp" alt="Marketing" />
+				<div class="content">
+					<h4>Marketing</h4>
+					<p>Alejandra Jimenez</p>
+				</div>
+				<a href="mailto:jimen411290@student.aisd.net">Email</a>
+			</div>
+		</div>
+	</main>
+</Layout>
 
 <style>
 	.center {

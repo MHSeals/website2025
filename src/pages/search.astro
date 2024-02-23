@@ -1,22 +1,11 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import SearchField from '../components/SearchField.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Search</h1>
-			<SearchField />
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<main>
+		<h1>Search</h1>
+		<SearchField />
+	</main>
+</Layout>
