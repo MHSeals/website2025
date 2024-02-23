@@ -3,7 +3,7 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} MHS Seals Roboboat Team. All rights reserved.
+	Follow us on social media
 	<div class="social-links">
 		<a href="https://www.instagram.com/mhs_roboboat/" target="_blank">
 			<span class="sr-only">Follow MHS Seals on Instagram</span>
@@ -20,7 +20,20 @@ const today = new Date();
 				></path></svg
 			>
 		</a>
+		<a href="https://www.youtube.com/@mhsroboboat" target="_blank">
+			<span class="sr-only">Subscribe to MHS Seals on YouTube</span>
+			<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 24 24">
+				<path fill="currentColor" d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,14.598V9.402c0-0.385,0.417-0.625,0.75-0.433l4.5,2.598c0.333,0.192,0.333,0.674,0,0.866l-4.5,2.598 C10.417,15.224,10,14.983,10,14.598z"></path>
+			</svg>
+		</a>
+		<a href="https://open.spotify.com/show/0wstSlb2fIK2EFgaNEAIIf" target="_blank">
+			<span class="sr-only">Listen to The MHS Roboboat Podcast on Spotify</span>
+			<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 24 24">
+				<path fill="currentColor" d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M16.057,16.406c-0.188,0-0.282-0.094-0.47-0.188 c-1.411-0.847-3.198-1.317-5.079-1.317c-1.035,0-2.163,0.188-3.104,0.376c-0.188,0-0.376,0.094-0.47,0.094 c-0.376,0-0.658-0.282-0.658-0.658c0-0.376,0.188-0.658,0.564-0.658c1.223-0.282,2.446-0.47,3.763-0.47 c2.163,0,4.139,0.564,5.832,1.505c0.188,0.188,0.376,0.282,0.376,0.658C16.621,16.218,16.339,16.406,16.057,16.406z M17.091,13.773 c-0.188,0-0.376-0.094-0.564-0.188c-1.599-1.035-3.857-1.599-6.302-1.599c-1.223,0-2.352,0.188-3.198,0.376 c-0.188,0.094-0.282,0.094-0.47,0.094c-0.47,0-0.753-0.376-0.753-0.753c0-0.47,0.188-0.658,0.658-0.847 c1.129-0.282,2.258-0.564,3.857-0.564c2.634,0,5.079,0.658,7.149,1.881c0.282,0.188,0.47,0.47,0.47,0.753 C17.844,13.396,17.562,13.773,17.091,13.773z M18.314,10.762c-0.188,0-0.282-0.094-0.564-0.188 c-1.881-1.035-4.609-1.693-7.243-1.693c-1.317,0-2.728,0.188-3.951,0.47c-0.188,0-0.282,0.094-0.564,0.094 C5.428,9.54,5.051,9.069,5.051,8.505c0-0.564,0.282-0.847,0.658-0.941C7.215,7.188,8.814,7,10.507,7 c2.916,0,5.926,0.658,8.278,1.881c0.282,0.188,0.564,0.47,0.564,0.941C19.255,10.386,18.878,10.762,18.314,10.762z"></path>
+			</svg>
+		</a>
 	</div>
+	&copy; {today.getFullYear()} MHS Seals Roboboat Team. All rights reserved.
 </footer>
 <style>
 	footer {
@@ -29,11 +42,13 @@ const today = new Date();
 		color: rgb(var(--gray));
 		text-align: center;
 	}
+
 	.social-links {
 		display: flex;
 		justify-content: center;
 		gap: 1em;
 		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 	.social-links a {
 		text-decoration: none;
