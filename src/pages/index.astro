@@ -14,24 +14,42 @@ import Layout from '../layouts/Layout.astro';
 			that you will follow along with us as we prepare for the competition.
 		</p>
 		<h3>Departments</h3>
-		<ul>
-			<li><a href="/cs">Computer Science</a></li>
-			<li><a href="/engineering">Engineering</a></li>
-			<li><a href="/electrical">Electrical</a></li>
-			<li><a href="/marketing">Marketing</a></li>
-		</ul>
+		<div class="departments">
+			<a href="/cs">Computer Science</a>
+			<a href="/engineering">Engineering</a>
+			<a href="/electrical">Electrical</a>
+			<a href="/marketing">Marketing</a>
+		</div>
 		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S5ki5BaswGs?si=HMFzN0wlVGPxlbQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 	</main>
 </Layout>
 
 <style>
-	ul {
-		list-style-type: none;
-		padding: 0;
+	.departments {
+		display: flex;
+		justify-content: space-around;
+		gap: 1rem;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
 	}
 
-	li {
-		margin-bottom: 1rem;
+	.departments a {
+		padding: 1rem;
+		border: 1px solid transparent;
+		border-radius: 12px;
+		background-color: var(--accent);
+		color: white;
+		width: 100%;
+		text-align: center;
+		text-decoration: none;
+		transition: background-color 0.2s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.departments a:hover {
+		background-color: var(--accent-dark);
 	}
 
 	iframe {
