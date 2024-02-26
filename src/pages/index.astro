@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout page_title='Home'>
 	<main data-pagefind-body>
-		<h1>&#129453; MHS Seals</h1>
+		<h1><span class="seal">&#129453;</span><h1 class="title">MHS Seals</h1></h1>
 		<p>
 			Welcome to the MHS Seals! We are a Roboboat team from James Martin High School in Arlington, Texas.
 			We are currently the only high school team in the Roboboat competition, and we are proud to
@@ -25,6 +25,20 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+	.seal {
+		position: absolute;
+		transform: rotate(0);
+		transition: transform 0.2s ease-in-out;
+	}
+
+	.seal:hover {
+		transform: rotate(720deg);
+	}
+
+	.title {
+		margin-left: 1.5em;
+	}
+
 	.departments {
 		display: flex;
 		justify-content: space-around;
