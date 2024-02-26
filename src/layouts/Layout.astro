@@ -9,13 +9,19 @@ interface Props {
     title?: string;
 	description?: string;
 	image?: string;
+    page_title?: string;
 }
 
-const {
+let {
     title = SITE_TITLE,
     description = SITE_DESCRIPTION,
-    image = '/favicon.webp'
+    image = '/favicon.webp',
+    page_title,
 } = Astro.props;
+
+if (page_title) {
+    title = `${page_title} | ${title}`;
+}
 ---
 
 <!-- TODO: some sort of view transition -->

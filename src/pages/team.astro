@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
+<Layout page_title='Team'>
 	<main data-pagefind-body>
 		<h1>Our team</h1>
 		<p>
@@ -100,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.captain-card .content {
 		width: 100%;
-		height: 130px;
+		height: 140px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -127,5 +127,15 @@ import Layout from '../layouts/Layout.astro';
 
 	.captain-card a:hover {
 		background-color: var(--accent-dark);
+	}
+
+	@media screen and (max-width: 600px) {
+		.captain-card .content {
+			height: unset;
+		}
+
+		.captain-card a {
+			margin-top: 0.5em;
+		}
 	}
 </style>
