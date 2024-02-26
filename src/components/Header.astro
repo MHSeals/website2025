@@ -15,7 +15,7 @@ import { SITE_TITLE } from '../consts';
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 			<div class="dropdown">
-				<HeaderLink href="/team">Team</HeaderLink>
+				<HeaderLink id="team_link" href="/team">Team<span class="material-symbols-outlined">expand_more</span></HeaderLink>
 				<div class="dropdown-content">
 					<HeaderLink href="/cs">Computer Science</HeaderLink>
 					<HeaderLink href="/engineering">Engineering</HeaderLink>
@@ -137,26 +137,46 @@ document.addEventListener("DOMContentLoaded", function() {
 	.dropdown {
 		position: relative;
 		display: inline-block;
+		z-index: 100;
+	}
+
+	#team_link {
+		display: flex;
+		align-items: center;
+	}
+
+	#team_link .material-symbols-outlined {
+		transform: rotate(0);
+		transition: transform 0.1s ease-out;
 	}
 
 	.dropdown-content {
-		display: none;
+		visibility: hidden;
+		opacity: 0;
 		position: absolute;
 		background-color: white;
 		min-width: 160px;
 		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 		z-index: 1;
+		border-radius: 12px;
+		transform: translateY(-100%);
+		transition: all 0.1s ease-out;
 	}
 
 	.dropdown-content a {
 		color: black;
 		padding: 12px 16px;
 		text-decoration: none;
-		display: block;
 	}
 
 	.dropdown:hover .dropdown-content {
-		display: block;
+		visibility: visible;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.dropdown:hover #team_link .material-symbols-outlined {
+		transform: rotate(180deg);
 	}
 
 	.social-links,
