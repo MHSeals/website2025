@@ -26,17 +26,15 @@ if (page_title) {
 
 <!-- TODO: some sort of view transition -->
 
-<layout>
-    <!doctype html>
-    <html lang="en">
-        <head>
-            <BaseHead title={title} description={description} image={image} />
-            <slot name="head" />
-        </head>
-        <body>
-            <Header />
-            <slot />
-            <Footer />
-        </body>
-    </html>
-</layout>
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} image={image} />
+        <slot name="head" />
+    </head>
+    <body>
+        <Header />
+        <slot />
+        <Footer />
+    </body>
+</html>
