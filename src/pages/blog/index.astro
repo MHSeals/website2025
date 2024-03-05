@@ -29,6 +29,7 @@ const posts = (await getCollection('blog')).sort(
 					))
 				}
 			</ul>
+			<p>RSS feed: <a href="/rss.xml">/rss.xml</a></p>
 		</section>
 	</main>
 </Layout>
@@ -46,6 +47,12 @@ const posts = (await getCollection('blog')).sort(
 <style>
 	main {
 		width: 960px;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	ul {
 		display: flex;
