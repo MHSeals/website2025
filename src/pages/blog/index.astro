@@ -4,8 +4,10 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Layout from '../../layouts/Layout.astro';
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	// Sort by date
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 ).filter(
+	// Remove posts that start with a -
 	(post) => !post.slug.startsWith('-')
 );
 ---
