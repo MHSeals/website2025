@@ -1,0 +1,47 @@
+---
+interface Props {
+  image: string;
+  description?: string;
+  link?: string;
+  showDescription?: boolean | string;
+}
+
+let {
+    description,
+    image,
+    link,
+    showDescription = true
+} = Astro.props;
+
+if (typeof showDescription === 'string') {
+    showDescription = showDescription.toLowerCase() === 'true';
+}
+---
+
+<div class="image">
+    {link && <a href={link}>
+        <img src={image} alt={description} />
+    </a>}
+    {!link && <img src={image} alt={
+        description
+    } />}
+    {showDescription && description && <p><em>{description}</em></p>}
+</div>
+
+<style>
+    .image {
+        margin-top: 1em;
+    }
+    
+    .image img {
+        max-width: 100%;
+    }
+
+    .image p {
+        margin-top: -0.5em;
+    }
+
+    .image a {
+        text-decoration: none;
+    }
+</style>

@@ -1,4 +1,5 @@
 ---
+import Image from '../components/Image.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -14,9 +15,7 @@ import Layout from '../layouts/Layout.astro';
 			The LiDAR data is clustered to detect obstacles in the water. Once we have our CV and LiDAR data, we detect the angle and distance to the buoys and obstacles
 			to correlate what our camera sees with what our LiDAR sees. We then use this data to navigate the boat around the obstacles and to the buoys.
 		</p>
-		<img src="/computer_vision.png" alt="Computer Vision" />
-		<br />
-		<i>Computer vision model detecting buoys</i>
+		<Image image='/computer_vision.png' description='Computer vision model detecting buoys' />
 		<h3>Important Links</h3>
 		<ul>
 			<li><a href="https://github.com/MHSeals">GitHub</a></li>
