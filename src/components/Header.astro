@@ -15,7 +15,7 @@ import { SITE_TITLE } from '../consts';
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 			<div class="dropdown">
-				<HeaderLink id="team_link" href="/team">Team<span class="material-symbols-outlined">expand_more</span></HeaderLink>
+				<HeaderLink id="team_link">Our Team<span class="material-symbols-outlined">expand_more</span></HeaderLink>
 				<div class="dropdown-content">
 					<HeaderLink href="/team">Team</HeaderLink>
 					<HeaderLink href="/cs">Computer Science</HeaderLink>
@@ -114,18 +114,19 @@ document.addEventListener("DOMContentLoaded", function() {
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
-		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		border-radius: 12px;
 		transition: all 0.2s ease;
 	}
 	
 	nav a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		color: var(--accent);
 	}
 
 	nav a:hover {
 		color: var(--accent);
+		background-color: rgba(var(--gray), 25%);
 	}
 
 	.internal-links {
