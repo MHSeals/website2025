@@ -3,8 +3,6 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<!--TODO: dropdown is inaccesible to touch devices -->
-
 <header>
 	<nav>
 		<div class="title">
@@ -127,6 +125,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	nav a:hover {
 		color: var(--accent);
 		background-color: rgba(var(--gray), 10%);
+	}
+
+	nav .social-links a:hover,
+	nav .title a:hover {
+		background-color: transparent;
 	}
 
 	.internal-links {
