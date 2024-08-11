@@ -33,8 +33,35 @@ if (page_title) {
         <slot name="head" />
     </head>
     <body>
-        <Header />
-        <slot />
-        <Footer />
+        <div class="container">
+            <Header />
+            <layout_main>
+                <slot />
+            </layout_main>
+            <Footer />
+        </div>
     </body>
 </html>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    layout_main {
+        flex-grow: 1;
+    }
+
+    footer {
+        margin-top: auto;
+    }
+</style>

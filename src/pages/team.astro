@@ -17,53 +17,93 @@ import Layout from '../layouts/Layout.astro';
 		<h3 class="center">Captains</h3>
 		<div class="captains">
 			<div class="captain-card">
-				<img src="/captains/president.webp" alt="President" />
-				<div class="content">
 					<h4>President</h4>
-					<p>Karmen Chandler</p>
+				<img src="/captains/lauren-janda.png" alt="Lauren Janda" />
+				<div class="content">
+					<p>Lauren Janda</p>
 				</div>
-				<a href="mailto:chand450704@student.aisd.net">Email</a>
+				<a href="mailto:@student.aisd.net">Email</a>
+			</div>
+			<div class="joint-card">
+				<h4>Executive Officers</h4>
+				<div class="joint-card-content">
+					<div class="captain-card">
+						<img src="/captains/bennett-rodriguez.png" alt="Bennett Rodriguez" />
+						<div class="content">
+							<p>Bennett Rodriguez</p>
+						</div>
+						<a href="mailto:@student.aisd.net">Email</a>
+					</div>
+					<div class="captain-card">
+						<img src="/captains/tammy-lin.png" alt="Tammy Lin" />
+						<div class="content">
+							<p>Tammy Lin</p>
+						</div>
+						<a href="mailto:@student.aisd.net">Email</a>
+					</div>
+				</div>
+			</div>
+			<div class="joint-card">
+				<h4>Computer Science</h4>
+				<div class="joint-card-content">
+					<div class="captain-card">
+						<img src="/captains/alec-jensen.png" alt="Alec Jensen" />
+						<div class="content">
+							<p>Alec Jensen</p>
+						</div>
+						<a href="mailto:@student.aisd.net">Email</a>
+					</div>
+					<div class="captain-card">
+						<img src="/captains/bennett-rodriguez.png" alt="Bennett Rodriguez" />
+						<div class="content">
+							<p>Bennett Rodriguez</p>
+						</div>
+						<a href="mailto:@student.aisd.net">Email</a>
+					</div>
+				</div>
 			</div>
 			<div class="captain-card">
-				<img src="/captains/vice_president.webp" alt="Vice President" />
+				<h4>Engineering</h4>
+				<img src="/captains/caleb-lewis.png" alt="Caleb Lewis" />
 				<div class="content">
-					<h4>Vice President</h4>
-					<p>Hudson Nguyen</p>
+					<p>Caleb Lewis</p>
 				</div>
-				<a href="mailto:nguye532016@student.aisd.net">Email</a>
+				<a href="mailto:@student.aisd.net">Email</a>
 			</div>
 			<div class="captain-card">
-				<img src="/captains/cs.webp" alt="Computer Science" />
+				<h4>Electrical Engineering</h4>
+				<img src="/captains/ryan-farnell.png" alt="Ryan Farnell" />
 				<div class="content">
-					<h4>Computer Science</h4>
-					<p>Emilio Reza</p>
+					<p>Ryan Farnell</p>
 				</div>
-				<a href="mailto:reza418688@student.aisd.net">Email</a>
+				<a href="mailto:@student.aisd.net">Email</a>
+			</div>
+			<div class="joint-card">
+				<h4>Marketing</h4>
+				<div class="joint-card-content">
+					<div class="captain-card">
+						<img src="/captains/alejandra-jimenez.png" alt="Alejandra Jimenez" />
+						<div class="content">
+							<p>Alejandra Jimenez</p>
+						</div>
+						<a href="mailto:@student.aisd.net">Email</a>
+					</div>
+					<div class="captain-card">
+						<img src="/captains/christina-tran.png" alt="Christina Tran" />
+						<div class="content">
+							<p>Christina Tran</p>
+						</div>
+						<a href="mailto:@student.aisd.net">Email</a>
+					</div>
+				</div>
 			</div>
 			<div class="captain-card">
-				<img src="/captains/engineering.webp" alt="Engineering" />
+				<h4>Web Development</h4>
+				<img src="/captains/alec-jensen.png" alt="Alec Jensen" />
 				<div class="content">
-					<h4>Engineering</h4>
-					<p>Christopher Gonzalez</p>
+					<p>Alec Jensen</p>
 				</div>
-				<a href="mailto:gonza426754@student.aisd.net">Email</a>
-			</div>
-			<div class="captain-card">
-				<img src="/captains/ee.webp" alt="Electrical Engineering" />
-				<div class="content">
-					<h4>Electrical Engineering</h4>
-					<p>Sebastian Rodriguez</p>
-				</div>
-				<a href="mailto:rodri369159@student.aisd.net">Email</a>
-			</div>
-			<div class="captain-card">
-				<img src="/captains/marketing.webp" alt="Marketing" />
-				<div class="content">
-					<h4>Marketing</h4>
-					<p>Alejandra Jimenez</p>
-				</div>
-				<a href="mailto:jimen411290@student.aisd.net">Email</a>
-			</div>
+				<a href="mailto:@student.aisd.net">Email</a>
 		</div>
 	</main>
 </Layout>
@@ -84,7 +124,6 @@ import Layout from '../layouts/Layout.astro';
 		align-items: center;
 		text-align: center;
 		height: 100%;
-		margin-top: 2em;
 		box-sizing: border-box;
 		width: 200px;
 		margin: 1em;
@@ -100,15 +139,14 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.captain-card .content {
 		width: 100%;
-		height: 140px;
+		height: 70px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
-	.captain-card h4 {
-		margin: 0;
-		max-width: 90%;
+	h4 {
+		height: 2.5em;
 		margin-top: 0.5em;
 	}
 	.captain-card p {
@@ -129,13 +167,59 @@ import Layout from '../layouts/Layout.astro';
 		background-color: var(--accent-dark);
 	}
 
+	.joint-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		height: 100%;
+		margin-top: 1em;
+		background-color: var(--accent);
+		color: white;
+		border-radius: 12px;
+	}
+
+	.joint-card h4 {
+		color: white;
+		max-width: 90%;
+	}
+
+	.joint-card-content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+	}
+
+	.joint-card-content .captain-card {
+		width: 100%;
+		margin-top: 0;
+	}
+
+	.joint-card-content .captain-card img {
+		border-color: white;
+	}
+
+	.joint-card-content .captain-card a {
+		background-color: white;
+		color: var(--accent);
+	}
+
 	@media screen and (max-width: 600px) {
+		h4 {
+			height: unset;
+		}
 		.captain-card .content {
 			height: unset;
 		}
 
 		.captain-card a {
 			margin-top: 0.5em;
+		}
+
+		.joint-card-content {
+			flex-direction: column;
 		}
 	}
 </style>

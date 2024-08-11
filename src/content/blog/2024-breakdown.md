@@ -1,7 +1,8 @@
 ---
 title: '2024 Competition Detailed Breakdown'
 description: 'Detailed breakdown of our performance at the 2024 Roboboat competition'
-pubDate: 'Feb 14 2024'
+pubDate: 'Feb 17 2024'
+updatedDate: 'Feb 17 2024'
 heroImage: '/blog/2024-breakdown/2024-competition-3.jpg'
 ---
 

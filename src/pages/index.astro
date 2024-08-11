@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout page_title='Home'>
 	<main data-pagefind-body>
-		<!-- <h1>MHS Seals</h1> -->
+		<h1 hidden>Home</h1> <!-- This is for search purposes -->
 		<img id="waves" src="/waves.svg" alt="MHS Seals">
 		<div id="post-waves">
 			<p id="top-text-element">
@@ -47,10 +47,10 @@ import Layout from '../layouts/Layout.astro';
 					</p>
 				</div>
 			</div>
-			<iframe src="https://www.youtube-nocookie.com/embed/S5ki5BaswGs?si=HMFzN0wlVGPxlbQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/S5ki5BaswGs?si=HMFzN0wlVGPxlbQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		</div>
 		<!-- This is the only way to not have these blurry -->
-		<img id="waves-bottom" src="/waves_flipped.svg" alt="Waves">
+		<img id="waves-bottom" src="/waves_flipped.svg" alt="Waves" loading="lazy">
 	</main>
 </Layout>
 
@@ -94,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	#post-waves {
-		background-color: #2450c7;
+		background-color: #375fca;
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -122,7 +122,7 @@ import Layout from '../layouts/Layout.astro';
 		padding: 1.5em 1em;
 		border: 1px solid transparent;
 		border-radius: 12px;
-		background-color: #ff914b;
+		background-color: #4182cc;
 		color: white;
 		min-width: 25%;
 		text-align: center;
@@ -134,7 +134,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.departments a:hover {
-		background-color: #ff7a00;
+		background-color: #3e7abe
 	}
 
 	.departments__item {

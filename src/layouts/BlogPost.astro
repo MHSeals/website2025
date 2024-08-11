@@ -6,6 +6,10 @@ import Layout from '../layouts/Layout.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const showUpdatedDate = updatedDate && new Date(updatedDate).getTime() !== new Date(pubDate).getTime();
+console.log('showUpdatedDate =', showUpdatedDate);
+console.log('pubDate =', pubDate);
+console.log('updatedDate =', updatedDate);
 ---
 
 <Layout title={title} description={description}>
@@ -19,7 +23,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					<div class="date">
 						<FormattedDate date={pubDate} />
 						{
-							updatedDate && (
+							showUpdatedDate && (
 								<div class="last-updated-on">
 									Last updated on <FormattedDate date={updatedDate} />
 								</div>
@@ -72,6 +76,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	}
 	.last-updated-on {
 		font-style: italic;
+		font-size: 0.8em;
+		margin-top: 0.5em;
 	}
 
 	@media (max-width: 720px) {

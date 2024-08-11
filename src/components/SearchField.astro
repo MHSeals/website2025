@@ -1,23 +1,26 @@
 ---
 import Search from "astro-pagefind/components/Search";
-
-export const prerender = false
-
-const q = Astro.url.searchParams.get("q") ?? undefined;
 ---
 
-<script>
+<script lang="js">
   window.addEventListener("DOMContentLoaded", () => {
-    const search = document.querySelector(`input[type="text"]`);
-    search?.focus();
-
-    const q = new URLSearchParams(window.location.search).get("q");
-    if (q) {
-      search.value = q;
-      search?.dispatchEvent(new Event("input"));
+    const search = document.querySelector(`#search input`);
+    if (!search) {
+      return;
     }
 
-    search?.addEventListener("input", (e) => {
+    search.focus();
+
+    const url = new URL(window.location);
+    const q = url.searchParams.get("q");
+    console.log("q =", q);
+
+    if (q) {
+      search.value = q;
+      search.dispatchEvent(new Event("input"));
+    }
+
+    search.addEventListener("input", (e) => {
       const value = e.target.value;
       const url = new URL(window.location);
       url.searchParams.set("q", value);
@@ -27,4 +30,4 @@ const q = Astro.url.searchParams.get("q") ?? undefined;
   
 </script>
 
-<Search id="search" className="pagefind-ui" uiOptions={{ showImages: false, debounceTimeoutMs: 100 }} query={q} />
+<Search id="search" className="pagefind-ui" />

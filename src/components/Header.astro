@@ -5,10 +5,10 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<div class="title">
+		<a href="/"  class="title">
 			<img id="logo" src="/favicon.webp" alt="MHSeals Logo" width="64" height="64" />
-			<h2><a href="/">{SITE_TITLE}</a></h2>
-		</div>
+			<h2>{SITE_TITLE}</h2>
+		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
@@ -23,7 +23,6 @@ import { SITE_TITLE } from '../consts';
 				</div>
 			</div>
 			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/search"><i class="fa fa-search"></i></HeaderLink>
 		</div>
 		<div class="mobile-links" id="mobile-links">
 			<HeaderLink href="/">Home</HeaderLink>
@@ -39,6 +38,12 @@ import { SITE_TITLE } from '../consts';
 		<a href="javascript:void(0);" class="icon" id="hamburger">
 			<i class="fa fa-bars"></i>
 		</a>
+		<div id="search-container">
+			<input type="text" placeholder="Search..." id="header_search" />
+			<div id="header_search_button">
+				<i class="fa fa-search"></i>
+			</div>
+		</div>
 		<div class="social-links">
 			<a href="https://www.instagram.com/mhs_roboboat/" target="_blank">
 				<span class="sr-only">Follow MHS Seals on Instagram</span>
@@ -71,6 +76,16 @@ function hamburger() {
 document.addEventListener("DOMContentLoaded", function() {
 	document.getElementById("hamburger").addEventListener("click", hamburger);
 });
+
+document.getElementById("header_search").addEventListener("keypress", function(e) {
+	if (e.key === "Enter") {
+		window.location.href = "/search?q=" + this.value;
+	}
+});
+
+document.getElementById("header_search_button").addEventListener("click", function() {
+	window.location.href = "/search?q=" + document.getElementById("header_search").value;
+});
 </script>
 <style>
 	header {
@@ -83,17 +98,31 @@ document.addEventListener("DOMContentLoaded", function() {
 	.title {
 		display: flex;
 		align-items: center;
-		margin: 0.2em;
+		padding: 0.2em;
+	}
+
+	.title img {
+		margin-right: 0.5em;
 	}
 
 	h2 {
 		margin: 0;
 		font-size: 1.4em;
+		transition: color 0.2s ease;
 	}
 
-	h2 a,
-	h2 a.active {
+	.title,
+	.title.active,
+	h2 a, h2 a.active {
 		text-decoration: none;
+	}
+
+	.title:hover {
+		text-decoration: none;
+	}
+
+	.title:hover h2 {
+		color: var(--accent);
 	}
 
 	nav {
@@ -109,7 +138,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		left: 0;
 	}
 
-	nav a {
+	.internal-links a, #search-container,
+	.social-links a {
 		padding: 1em 0.5em;
 		color: var(--black);
 		text-decoration: none;
@@ -117,12 +147,14 @@ document.addEventListener("DOMContentLoaded", function() {
 		transition: all 0.2s ease;
 	}
 	
-	nav a.active {
+	.internal-links a.active,
+	.social-links a.active {
 		text-decoration: none;
 		color: var(--accent);
 	}
 
-	nav a:hover {
+	.internal-links a:hover,
+	.social-links a:hover {
 		color: var(--accent);
 		background-color: rgba(var(--gray), 10%);
 	}
@@ -207,6 +239,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	.mobile-links {
 		display: none;
+	}
+
+	#search-container {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		right: 6.1em;
+	}
+
+	#header_search {
+		padding: 0.5em;
+		border-radius: 12px;
+		border: 1px solid black;
+	}
+
+	#header_search_button {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		cursor: pointer;
+	}
+
+	#header_search_button i {
+		transition: color 0.2s ease;
+	}
+
+	#header_search_button:hover i {
+		color: var(--accent);
 	}
 
 	@media (max-width: 720px) {
