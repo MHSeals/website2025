@@ -44,19 +44,19 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: 2.7em;
 }
 h2 {
-	font-size: 2.441em;
+	font-size: 2.3em;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: 1.8em;
 }
 h4 {
-	font-size: 1.563em;
+	font-size: 1.5em;
 }
 h5 {
-	font-size: 1.25em;
+	font-size: 1.3em;
 }
 strong,
 b {
@@ -94,7 +94,7 @@ img {
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	border-radius: 4px;
 }
 pre {
 	padding: 1.5em;
@@ -139,4 +139,10 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+video {
+	max-width: 100%;
+	height: auto;
+	border-radius: 12px;
 }

@@ -1,8 +1,8 @@
 ---
-title: 'Seals make waves at Roboboat 2024'
+title: 'Seals Make Waves at Roboboat 2024'
 description: 'Overview of the Seals performance in the 2024 Roboboat competition'
 pubDate: 'Feb 17 2024'
-updatedDate: 'Feb 21 2024'
+updatedDate: 'Jan 21 2025'
 heroImage: '/blog/2024-competition/2024-competition-banner.jpg'
 ---
 

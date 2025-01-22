@@ -1,25 +1,93 @@
 ---
-import Image from '../components/Image.astro';
-import Layout from '../layouts/Layout.astro';
+import Image from "../components/Image.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout page_title='CS'>
-	<main data-pagefind-body>
-		<h1>&#129489;&#8205;&#128187; Computer Science</h1>
-		<p>
-			Our computer science department is responsible for all of the systems that navigate the boat.
-			We use a depth-sensing camera to detect buoys and other obstacles, GPS to make sure that we're always on the right course,
-			and LiDAR to detect obstacles in the water. We also have various other sensors to detect movement, heading, and other important data.
-			We use Python and ROS2 to control the boat and process the data from the sensors. We have a CV model that we use to detect buoys and other obstacles.
-			To make the CV model, we use Roboflow to label the data and then we use transfer learning to train the model on top of YOLOv8s.
-			The LiDAR data is clustered to detect obstacles in the water. Once we have our CV and LiDAR data, we detect the angle and distance to the buoys and obstacles
-			to correlate what our camera sees with what our LiDAR sees. We then use this data to navigate the boat around the obstacles and to the buoys.
-		</p>
-		<Image image='/computer_vision.png' description='Computer vision model detecting buoys' />
-		<h3>Important Links</h3>
-		<ul>
-			<li><a href="https://github.com/MHSeals">GitHub</a></li>
-			<li><a href="https://universe.roboflow.com/mhseals/buoys-4naae">Roboflow</a></li>
-		</ul>
-	</main>
+<Layout page_title="CS">
+  <main data-pagefind-body>
+    <h1>&#129489;&#8205;&#128187; Computer Science</h1>
+    <p>
+      Our computer science department is responsible for all of the systems that
+      navigate the boat. We use a depth-sensing camera to detect buoys and other
+      obstacles, GPS to make sure that we're always on the right course, and
+      LiDAR to detect obstacles in the water. We also have various other sensors
+      to detect movement, heading, and other important data. We use Python and
+      ROS2 to control the boat and process the data from the sensors. We have a
+      CV model that we use to detect buoys and other obstacles. To make the CV
+      model, we use Roboflow to label the data and then we use transfer learning
+      to train the model on top of YOLOv8s. The LiDAR data is clustered to
+      detect obstacles in the water. Once we have our CV and LiDAR data, we
+      detect the angle and distance to the buoys and obstacles to correlate what
+      our camera sees with what our LiDAR sees. We then use this data to
+      navigate the boat around the obstacles and to the buoys.
+    </p>
+    <h2>mhsboat_ctrl</h2>
+    <p>
+      This is the control system for the MHSeals boat. It is built on ROS 2
+      Humble and Ubuntu 22.04, and requires Python >= 3.8. We use custom
+      messages for communication between nodes.
+    </p>
+    <h3>Principles</h3>
+    <ul>
+      <li>
+        <strong>Boat-Centric Coordinates:</strong> All coordinates and movements
+        are relative to the boat, simplifying calculations and ensuring consistency.
+      </li>
+      <li>
+        <strong>Modularity:</strong> The system is modular, allowing for easy addition
+        and modification of tasks.
+      </li>
+      <li>
+        <strong>Simulation Support:</strong> The system supports running in simulation
+        mode for testing and development without physical hardware.
+      </li>
+    </ul>
+    <h3>Task System</h3>
+    <p>
+      Tasks are modular and live in the <code>mhsboat_ctrl/tasks</code> directory.
+      Each task is a separate class that inherits from the <code>Task</code> class
+      in <code>mhsboat_ctrl/tasks/task.py</code>. Tasks are automatically
+      detected and loaded by the control system.
+    </p>
+    <h3>Main Loop</h3>
+    <p>
+      The main loop of the control system is in <code
+        >mhsboat_ctrl/mhsboat_ctrl.py</code
+      >. It searches for the next task to run, runs it, and repeats. Tasks use
+      sensor data to make decisions.
+    </p>
+    <h3>Sensors</h3>
+    <p>
+      The <code>Sensors</code> class in <code>mhsboat_ctrl/sensors.py</code> subscribes
+      to various sensor topics and processes the incoming data for use by tasks.
+    </p>
+    <h3>Simulation</h3>
+    <p>
+      To run the control system in simulation mode, pass the <code
+        >use_simulated_map</code
+      > and <code>map_file</code> parameters to the mhsboat_ctrl node.
+    </p>
+    <h3>Computer Vision</h3>
+    <p>
+      Our computer vision model is built on YOLOv11s and is trained to detect
+      buoys and other obstacles in the water. We use Roboflow to label the data
+      and then we use transfer learning to train the model on top of YOLOv8s.
+      The LiDAR data is clustered to detect obstacles in the water. Once we have
+      our CV and LiDAR data, we detect the angle and distance to the buoys and
+      obstacles to correlate what our camera sees with what our LiDAR sees. We
+      then use this data to navigate the boat around the obstacles and to the
+      buoys.
+    </p>
+    <Image
+      image="/computer_vision.png"
+      description="Computer vision model detecting buoys"
+    />
+    <h3>Important Links</h3>
+    <ul>
+      <li><a href="https://github.com/MHSeals">GitHub</a></li>
+      <li>
+        <a href="https://universe.roboflow.com/mhseals/buoys-4naae">Roboflow</a>
+      </li>
+    </ul>
+  </main>
 </Layout>

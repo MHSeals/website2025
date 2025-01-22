@@ -1,11 +1,26 @@
 ---
-import UnderConstruction from '../components/UnderConstruction.astro';
-import Layout from '../layouts/Layout.astro';
+import UnderConstruction from "../components/UnderConstruction.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout page_title='Engineering'>
-	<main data-pagefind-body>
-		<h1>&#128119; Engineering</h1>
-		<UnderConstruction />
-	</main>
+<Layout page_title="Engineering">
+  <main data-pagefind-body>
+    <h1>&#128119; Mechanical Engineering</h1>
+    <p>
+      The mechanical engineering team is responsible for designing and
+      manufacturing the boat’s components, as well as developing the mechanisms
+      for the challenges. We use Autodesk Inventor, a CAD software, to calculate
+      the boat’s waterline and create 3D models of the hulls and mechanisms.
+      Additionally, we utilize tools like the CNC machine to precisely cut out
+      the hull frames before beginning the fiberglassing process. We wrap the
+      frame with cloth, apply large sheets of fiberglass, and use resin to shape
+      the boat hulls. The team is also in charge of the propulsion system, which
+      includes mounting the propellers and creating the frame that connects both
+      hulls.
+    </p>
+    <video controls width="100%">
+      <source src="/Video of Full Boat CAD.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </main>
 </Layout>
