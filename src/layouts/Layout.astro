@@ -24,10 +24,8 @@ if (page_title) {
 }
 ---
 
-<!-- TODO: some sort of view transition -->
-
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:name="root">
     <head>
         <BaseHead title={title} description={description} image={image} />
         <slot name="head" />

@@ -15,13 +15,13 @@ const posts = (await getCollection('blog')).sort(
 <Layout page_title='Blog'>
 	<main data-pagefind-body>
 		<section>
-			<h2 class="alt-message" hidden>It looks like there are no posts yet!</h2>
+			<h2 class="alt-message" hidden data-pagefind-ignore>It looks like there are no posts yet!</h2>
 			<ul>
 				{
 					posts.map((post) => (
 						<li>
 							<a href={`/blog/${post.slug}/`}>
-								<img width={720} height={360} src={post.data.heroImage} alt="" />
+								<img width={720} height={360} src={post.data.heroImage} alt="" transition:name={`post-image-${post.data.title}`} />
 								<h4 class="title">{post.data.title}</h4>
 								<p class="date">
 									<FormattedDate date={post.data.pubDate} />

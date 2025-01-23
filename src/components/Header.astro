@@ -1,335 +1,383 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-	<nav>
-		<a href="/"  class="title">
-			<img id="logo" src="/favicon.webp" alt="MHSeals Logo" width="64" height="64" />
-			<h2>{SITE_TITLE}</h2>
-		</a>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<div class="dropdown">
-				<HeaderLink id="team_link">Our Team<span class="material-symbols-outlined">expand_more</span></HeaderLink>
-				<div class="dropdown-content">
-					<HeaderLink href="/captains">Captains</HeaderLink>
-					<HeaderLink href="/cs">Computer Science</HeaderLink>
-					<HeaderLink href="/engineering">Mechanical Engineering</HeaderLink>
-					<HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
-					<HeaderLink href="/marketing">Marketing</HeaderLink>
-				</div>
-			</div>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-		</div>
-		<div class="mobile-links" id="mobile-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/captains">Captains</HeaderLink>
-			<HeaderLink href="/cs">Computer Science</HeaderLink>
-			<HeaderLink href="/engineering">Mechanical Engineering</HeaderLink>
-			<HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
-			<HeaderLink href="/marketing">Marketing</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/search">Search</HeaderLink>
-		</div>
-		<a href="javascript:void(0);" class="icon" id="hamburger">
-			<i class="fa fa-bars"></i>
-		</a>
-		<div id="search-container">
-			<input type="text" placeholder="Search..." id="header_search" />
-			<div id="header_search_button">
-				<i class="fa fa-search"></i>
-			</div>
-		</div>
-		<div class="social-links">
-			<a href="https://www.instagram.com/mhs_roboboat/" target="_blank">
-				<span class="sr-only">Follow MHS Seals on Instagram</span>
-				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30">
-					<path fill="currentColor" d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
-				</svg>
-			</a>
-			<a href="https://github.com/MHSeals" target="_blank">
-				<span class="sr-only">Go to the MHSeals GitHub org</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
-			</a>
-		</div>
-	</nav>
+  <nav>
+    <a href="/" class="title">
+      <img
+        id="logo"
+        src="/favicon.webp"
+        alt="MHSeals Logo"
+        width="56"
+        height="56"
+      />
+      <h2>{SITE_TITLE}</h2>
+    </a>
+    <div class="internal-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <div class="dropdown">
+        <HeaderLink id="team_link"
+          >Our Team<span class="material-symbols-outlined">expand_more</span
+          ></HeaderLink
+        >
+        <div class="dropdown-content">
+          <HeaderLink href="/captains">Captains</HeaderLink>
+          <HeaderLink href="/cs">Computer Science</HeaderLink>
+          <HeaderLink href="/engineering">Mechanical Engineering</HeaderLink>
+          <HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
+          <HeaderLink href="/marketing">Marketing</HeaderLink>
+        </div>
+      </div>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+    </div>
+    <div class="mobile-links" id="mobile-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="/captains">Captains</HeaderLink>
+      <HeaderLink href="/cs">Computer Science</HeaderLink>
+      <HeaderLink href="/engineering">Mechanical Engineering</HeaderLink>
+      <HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
+      <HeaderLink href="/marketing">Marketing</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/search">Search</HeaderLink>
+    </div>
+    <a href="javascript:void(0);" class="icon" id="hamburger">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div id="search-container">
+      <input type="text" placeholder="Search..." id="header_search" />
+      <div id="header_search_button">
+        <i class="fa fa-search"></i>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/mhs_roboboat/" target="_blank">
+        <span class="sr-only">Follow MHS Seals on Instagram</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 30 30"
+        >
+          <path
+            fill="currentColor"
+            d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"
+          ></path>
+        </svg>
+      </a>
+      <a href="https://github.com/MHSeals" target="_blank">
+        <span class="sr-only">Go to the MHSeals GitHub org</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
+          ><path
+            fill="currentColor"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          ></path></svg
+        >
+      </a>
+    </div>
+  </nav>
 </header>
 <script>
-function hamburger() {
-	var x = document.getElementById("mobile-links");
-	if (x.style.display == "flex") {
-		x.style.display = "none";
-	} else {
-		x.style.display = "flex";
-	}
-}
+  document.addEventListener("astro:page-load", () => {
+    function hamburger() {
+      var x = document.getElementById("mobile-links");
+      if (x.style.display == "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+      }
+    }
 
-document.addEventListener("DOMContentLoaded", function() {
-	document.getElementById("hamburger").addEventListener("click", hamburger);
-});
+    function animateSearchIcon() {
+      const searchIcon = document
+        .getElementById("header_search_button")
+        .querySelector("i");
+      searchIcon.classList.add("animate");
+      setTimeout(() => searchIcon.classList.remove("animate"), 500);
+    }
 
-document.getElementById("header_search").addEventListener("keypress", function(e) {
-	if (e.key === "Enter") {
-		window.location.href = "/search?q=" + this.value;
-	}
-});
+    document.getElementById("hamburger").addEventListener("click", hamburger);
 
-document.getElementById("header_search_button").addEventListener("click", function() {
-	window.location.href = "/search?q=" + document.getElementById("header_search").value;
-});
+    document
+      .getElementById("header_search")
+      .addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          animateSearchIcon();
+          window.location.href = "/search?q=" + this.value;
+        }
+      });
+
+    document
+      .getElementById("header_search_button")
+      .addEventListener("click", function () {
+        animateSearchIcon();
+        window.location.href =
+          "/search?q=" + document.getElementById("header_search").value;
+      });
+  });
 </script>
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		margin-bottom: 3em;
-		z-index: 100;
-	}
+  header {
+    margin: 0;
+    padding: 0 1em;
+    margin-bottom: 3em;
+    z-index: 100;
+  }
 
-	.title {
-		display: flex;
-		align-items: center;
-		padding: 0.2em;
-	}
+  .title {
+    display: flex;
+    align-items: center;
+    padding: 0.2em;
+  }
 
-	.title img {
-		margin-right: 0.5em;
-	}
+  .title img {
+    margin-left: 0.25em;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
 
-	h2 {
-		margin: 0;
-		font-size: 1.4em;
-		transition: color 0.2s ease;
-	}
+  /* Spin the logo on hover */
+  .title img:hover {
+    transform: rotate(360deg);
+  }
 
-	.title,
-	.title.active,
-	h2 a, h2 a.active {
-		text-decoration: none;
-	}
+  h2 {
+    margin: 0;
+    font-size: 1.4em;
+    transition: color 0.2s ease;
+  }
 
-	.title:hover {
-		text-decoration: none;
-	}
+  .title,
+  .title.active,
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
 
-	.title:hover h2 {
-		color: var(--accent);
-	}
+  .title:hover {
+    text-decoration: none;
+  }
 
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: 100;
-		left: 0;
-	}
+  .title:hover h2 {
+    color: var(--coral-pink);
+  }
 
-	.internal-links a, #search-container,
-	.social-links a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		text-decoration: none;
-		border-radius: 12px;
-		transition: all 0.2s ease;
-	}
-	
-	.internal-links a.active,
-	.social-links a.active {
-		text-decoration: none;
-		color: var(--accent);
-	}
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    left: 0;
+  }
 
-	.internal-links a:hover,
-	.social-links a:hover {
-		color: var(--accent);
-		background-color: rgba(var(--gray), 10%);
-	}
+  .internal-links a,
+  #search-container,
+  .social-links a {
+    padding: 1em 0.5em;
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
 
-	nav .social-links a:hover,
-	nav .title a:hover {
-		background-color: transparent;
-	}
+  .internal-links a.active,
+  .social-links a.active {
+    text-decoration: none;
+    color: var(--accent);
+  }
 
-	.internal-links {
-		display: flex;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-	}
+  .internal-links a:hover,
+  .social-links a:hover {
+    color: var(--coral-pink);
+    background-color: rgba(var(--gray), 10%);
+  }
 
-	.dropdown-full {
-		position: relative;
-	}
+  nav .social-links a:hover,
+  nav .title a:hover {
+    background-color: transparent;
+  }
 
-	.dropdown {
-		position: relative;
-		display: inline-block;
-		z-index: 2;
-	}
+  .internal-links {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-	#team_link {
-		display: flex;
-		align-items: center;
-	}
+  .dropdown-full {
+    position: relative;
+  }
 
-	#team_link .material-symbols-outlined {
-		transform: rotate(0);
-		transition: transform 0.1s ease-out;
-	}
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
 
-	.dropdown-content {
-		visibility: hidden;
-		opacity: 0;
-		position: absolute;
-		background-color: white;
-		width: 8em;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-		border-radius: 12px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
+  #team_link {
+    display: flex;
+    align-items: center;
+  }
 
-	.dropdown-content a {
-		color: black;
-		padding: 0.5em 0;
-		text-decoration: none;
-		width: 100%;
-		text-align: center;
-	}
+  #team_link .material-symbols-outlined {
+    transform: rotate(0);
+    transition: transform 0.1s ease-out;
+  }
 
-	.dropdown:hover .dropdown-content {
-		visibility: visible;
-		opacity: 1;
-	}
+  .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    width: 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-	.dropdown:hover #team_link .material-symbols-outlined {
-		transform: rotate(180deg);
-	}
+  .dropdown-content a {
+    color: black;
+    padding: 0.5em 0;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+  }
 
-	.social-links,
-	.social-links a {
-		display: flex;
-		align-items: center;
-	}
+  .dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+  }
 
-	.social-links {
-		margin-right: 1em;
-	}
+  .dropdown:hover #team_link .material-symbols-outlined {
+    transform: rotate(180deg);
+  }
 
-	.icon {
-		display: none;
-	}
+  .social-links,
+  .social-links a {
+    display: flex;
+    align-items: center;
+  }
 
-	.mobile-links {
-		display: none;
-	}
+  .social-links {
+    margin-right: 1em;
+  }
 
-	#search-container {
-		display: flex;
-		align-items: center;
-		position: absolute;
-		right: 6.1em;
-	}
+  .icon {
+    display: none;
+  }
 
-	#header_search {
-		padding: 0.5em;
-		border-radius: 12px;
-		border: 1px solid black;
-	}
+  .mobile-links {
+    display: none;
+  }
 
-	#header_search_button {
-		position: absolute;
-		top: 1em;
-		right: 1em;
-		cursor: pointer;
-	}
+  #search-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 6.1em;
+  }
 
-	#header_search_button i {
-		transition: color 0.2s ease;
-	}
+  #header_search {
+    padding: 0.5em;
+    border-radius: 12px;
+    border: 1px solid black;
+  }
 
-	#header_search_button:hover i {
-		color: var(--accent);
-	}
+  #header_search_button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+  }
 
-	@media (max-width: 1075px) {
-		#header_search {
-			display: none;
-		}
+  #header_search_button i {
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
 
-		#header_search_button {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-	}
+  #header_search_button i.animate {
+    transform: scale(1.5);
+  }
 
-	@media (max-width: 820px) {
-		header {
-			margin-bottom: 4em;
-		}
+  #header_search_button:hover i {
+    color: var(--accent);
+  }
 
-		.social-links {
-			display: none;
-		}
+  @media (max-width: 1075px) {
+    #header_search {
+      display: none;
+    }
 
-		.icon {
-			display: block;
-			height: 100%;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			margin: 0 1em;
-			color: var(--black);
-		}
+    #header_search_button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 
-		.icon:hover {
-			color: var(--accent);
-		}
+  @media (max-width: 820px) {
+    header {
+      margin-bottom: 4em;
+    }
 
-		.icon i {
-			font-size: 1.5em;
-		}
+    .social-links {
+      display: none;
+    }
 
-		.internal-links {
-			display: none;
-		}
+    .icon {
+      display: block;
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin: 0 1em;
+      color: var(--black);
+    }
 
-		.mobile-links {
-			display: none;
-			flex-direction: column;
-			position: fixed;
-			background: white;
-			width: 100%;
-			top: 70px;
-			z-index: 100;
-			height: 100%;
-			max-height: 100vh;
-		}
+    .icon:hover {
+      color: var(--accent);
+    }
 
-		.mobile-links a {
-			padding: 0.8em;
-		}
+    .icon i {
+      font-size: 1.5em;
+    }
 
-		#search-container {
-			display: none;
-		}
-	}
+    .internal-links {
+      display: none;
+    }
+
+    .mobile-links {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      background: white;
+      width: 100%;
+      top: 60px;
+      z-index: 100;
+      height: 100%;
+      max-height: 100vh;
+    }
+
+    .mobile-links a {
+      padding: 0.8em;
+    }
+
+    #search-container {
+      display: none;
+    }
+  }
 </style>

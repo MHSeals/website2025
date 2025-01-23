@@ -24,7 +24,7 @@ Creating an autonomous surface vehicle (ASV) is no small task—it’s a team ef
 
 It’s a massive project, and every department is working hard to ensure our boat is ready to compete.
 
-![Promiting our club](/blog/2025-preparation/IMG_9813.JPG)
+![Promoting our club](/blog/2025-preparation/IMG_9813.JPG)
 *Promoting our club*
 
 ### Computer Science: The Heart of Autonomy
