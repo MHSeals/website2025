@@ -159,8 +159,15 @@ video {
 
 .page-title {
   transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
 }
 
 .page-title:hover {
   transform: scale(1.05) rotate(0.5deg);
+}
+
+.page-title img {
+  height: 60px;
+  margin-right: 0.3em;
 }
