@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout page_title='Team'>
 	<main data-pagefind-body>
-		<h1>&#129309; Captains</h1>
+		<h1 class="page-title">&#129309; Captains</h1>
 		<p>
 			Meet the captains of the MHS Seals Roboboat team!
 			Our captains are responsible for leading the team,
@@ -96,35 +96,76 @@ import Layout from '../layouts/Layout.astro';
 	</main>
 </Layout>
 
-<style>
-	.center {
-		text-align: center;
-	}
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+	  const cards = document.querySelectorAll('.captain-card img');
+  
+	  cards.forEach(card => {
+		card.addEventListener('mousemove', (e) => {
+		  const rect = card.getBoundingClientRect();
+		  const x = e.clientX - rect.left;
+		  const y = e.clientY - rect.top;
+		  const centerX = rect.width / 2;
+		  const centerY = rect.height / 2;
+		  const rotateX = (centerY - y) / 10;
+		  const rotateY = (x - centerX) / 10;
+  
+		  card.style.transform = `scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+		});
+  
+		card.addEventListener('mouseleave', () => {
+		  card.style.transform = 'scale(1)';
+		});
+	  });
+	});
+  </script>
 
-	.captains {
-		display: flex;
-		justify-content: space-evenly;
-		flex-wrap: wrap;
-	}
-	.captain-card {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		height: 100%;
-		box-sizing: border-box;
-		width: 200px;
-		margin: 1em;
-	}
-	.captain-card img {
-		height: 200px;
-		width: 200px;
-		object-fit: cover;
-		border-radius: 50%;
-		border-color: var(--accent);
-		border-width: 5px;
-		border-style: solid;
-	}
+<style>
+  .center {
+    text-align: center;
+  }
+
+  .captains {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .captain-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+    width: 200px;
+    margin: 1em;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    perspective: 1000px;
+  }
+
+  .captain-card img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border-color: var(--accent);
+    border-width: 5px;
+    border-style: solid;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+  }
+
+  .captain-card img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 	.captain-card .content {
 		width: 100%;
 		height: 70px;

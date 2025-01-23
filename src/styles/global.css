@@ -156,3 +156,11 @@ video {
   height: auto;
   border-radius: 12px;
 }
+
+.page-title {
+  transition: transform 0.2s ease;
+}
+
+.page-title:hover {
+  transform: scale(1.05) rotate(0.5deg);
+}

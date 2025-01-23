@@ -155,7 +155,7 @@ import Layout from '../layouts/Layout.astro';
 		min-width: 25%;
 		text-align: center;
 		text-decoration: none;
-		transition: background-color 0.2s;
+		transition: all 0.2s;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -163,6 +163,7 @@ import Layout from '../layouts/Layout.astro';
 
 	.departments a:hover {
 		background-color: var(--coral-pink);
+		transform: scale(1.05) rotate(1deg);
 	}
 
 	.departments__item {
@@ -193,6 +194,11 @@ import Layout from '../layouts/Layout.astro';
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 		text-align: center;
 		width: 768px;
+		transition: transform 0.2s ease;
+	}
+
+	#countdown:active {
+		transform: scale(0.95) rotate(1deg);
 	}
 
 	@media screen and (max-width: 800px){
@@ -244,6 +250,11 @@ import Layout from '../layouts/Layout.astro';
 		#countdown {
 			width: 90%;
 			padding: 0.25em 0.5em;
+			transition: transform 0.2s ease;
+		}
+
+		#countdown:hover {
+			animation: none;
 		}
 	}
 </style>

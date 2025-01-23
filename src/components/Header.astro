@@ -47,10 +47,10 @@ import { SITE_TITLE } from "../consts";
     <a href="javascript:void(0);" class="icon" id="hamburger">
       <i class="fa fa-bars"></i>
     </a>
-    <div id="search-container">
+    <div id="search-container" transition:persist>
       <input type="text" placeholder="Search..." id="header_search" />
       <div id="header_search_button">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search" transition:name="header-search-icon"></i>
       </div>
     </div>
     <div class="social-links">
@@ -81,6 +81,8 @@ import { SITE_TITLE } from "../consts";
   </nav>
 </header>
 <script>
+  import { navigate } from 'astro:transitions/client';
+
   document.addEventListener("astro:page-load", () => {
     function hamburger() {
       var x = document.getElementById("mobile-links");
@@ -101,21 +103,23 @@ import { SITE_TITLE } from "../consts";
 
     document.getElementById("hamburger").addEventListener("click", hamburger);
 
+    function executeSearch() {
+      animateSearchIcon();
+      navigate("/search?q=" + document.getElementById("header_search").value, {history: "push"});
+    }
+
     document
       .getElementById("header_search")
       .addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
-          animateSearchIcon();
-          window.location.href = "/search?q=" + this.value;
+          executeSearch();
         }
       });
 
     document
       .getElementById("header_search_button")
       .addEventListener("click", function () {
-        animateSearchIcon();
-        window.location.href =
-          "/search?q=" + document.getElementById("header_search").value;
+        executeSearch();
       });
   });
 </script>
@@ -257,8 +261,20 @@ import { SITE_TITLE } from "../consts";
   }
 
   .dropdown:hover .dropdown-content {
+    animation: dropdown-animation 0.3s ease;
     visibility: visible;
     opacity: 1;
+  }
+
+  @keyframes dropdown-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px) translateX(-50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) translateX(-50%);
+    }
   }
 
   .dropdown:hover #team_link .material-symbols-outlined {
@@ -277,6 +293,7 @@ import { SITE_TITLE } from "../consts";
 
   .icon {
     display: none;
+    text-decoration: none;
   }
 
   .mobile-links {
@@ -306,11 +323,25 @@ import { SITE_TITLE } from "../consts";
   #header_search_button i {
     transition:
       color 0.2s ease,
-      transform 0.2s ease;
   }
 
   #header_search_button i.animate {
-    transform: scale(1.5);
+    animation: search_button_animation 0.2s ease;
+  }
+
+  @keyframes search_button_animation {
+    0% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-4em) rotate(90deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
   }
 
   #header_search_button:hover i {
@@ -346,10 +377,12 @@ import { SITE_TITLE } from "../consts";
       align-items: center;
       margin: 0 1em;
       color: var(--black);
+      transition: transform 0.2s ease;
     }
 
-    .icon:hover {
-      color: var(--accent);
+    /* make icon zoom in slightly when clicked */
+    .icon:active {
+      transform: scale(1.1);
     }
 
     .icon i {
@@ -374,6 +407,11 @@ import { SITE_TITLE } from "../consts";
 
     .mobile-links a {
       padding: 0.8em;
+      color: var(--black);
+    }
+
+    .mobile-links a.active {
+      color: var(--accent);
     }
 
     #search-container {
