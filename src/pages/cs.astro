@@ -15,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
       ROS2 to control the boat and process the data from the sensors. We have a
       CV model that we use to detect buoys and other obstacles. To make the CV
       model, we use Roboflow to label the data and then we use transfer learning
-      to train the model on top of YOLOv8s. The LiDAR data is clustered to
+      to train the model on top of YOLOv11s. The LiDAR data is clustered to
       detect obstacles in the water. Once we have our CV and LiDAR data, we
       detect the angle and distance to the buoys and obstacles to correlate what
       our camera sees with what our LiDAR sees. We then use this data to
@@ -66,17 +66,6 @@ import Layout from "../layouts/Layout.astro";
       To run the control system in simulation mode, pass the <code
         >use_simulated_map</code
       > and <code>map_file</code> parameters to the mhsboat_ctrl node.
-    </p>
-    <h3>Computer Vision</h3>
-    <p>
-      Our computer vision model is built on YOLOv11s and is trained to detect
-      buoys and other obstacles in the water. We use Roboflow to label the data
-      and then we use transfer learning to train the model on top of YOLOv8s.
-      The LiDAR data is clustered to detect obstacles in the water. Once we have
-      our CV and LiDAR data, we detect the angle and distance to the buoys and
-      obstacles to correlate what our camera sees with what our LiDAR sees. We
-      then use this data to navigate the boat around the obstacles and to the
-      buoys.
     </p>
     <Image
       image="/computer_vision.png"
