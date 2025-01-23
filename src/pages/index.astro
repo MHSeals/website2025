@@ -7,6 +7,8 @@ import Layout from '../layouts/Layout.astro';
 	<main data-pagefind-body>
 		<h1 hidden>Home</h1> <!-- This is for search purposes -->
 		<img id="waves" src="/waves.svg" alt="MHS Seals">
+		<img id="seal-1" src="/seal-1.svg" alt="Seal 1" loading="lazy">
+		<img id="seal-2" src="/seal-2.svg" alt="Seal 2" loading="lazy">
 		<div id="post-waves">
 			<div id="countdown" hidden></div> <!-- Countdown element -->
 			<p id="top-text-element">
@@ -119,6 +121,22 @@ import Layout from '../layouts/Layout.astro';
 	#waves {
 		width: 100%;
 		border-radius: 0;
+	}
+
+	#seal-1 {
+		position: absolute;
+		top: 1000px;
+		left: 10px;
+		height: 500px;
+		z-index: 1;
+	}
+
+	#seal-2 {
+		position: absolute;
+		top: 1600px;
+		right: 30px;
+		height: 500px;
+		z-index: 1;
 	}
 
 	#post-waves {
