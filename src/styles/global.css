@@ -28,6 +28,7 @@ body {
   font-family: "Poppins", sans-serif, apple color emoji, segoe ui emoji,
     noto color emoji, android emoji, emojisymbols, emojione mozilla,
     twemoji mozilla, segoe ui symbol;
+  font-display: swap;
   margin: 0;
   padding: 0;
   text-align: left;
