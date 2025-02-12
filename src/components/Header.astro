@@ -80,10 +80,18 @@ import { SITE_TITLE } from "../consts";
     </div>
   </nav>
 </header>
+
 <script>
   import { navigate } from 'astro:transitions/client';
+  import * as Swetrix from "swetrix";
 
   document.addEventListener("astro:page-load", () => {
+    Swetrix.init('jiOuxLXVCKiM', {
+      apiURL: 'https://api.analytics.alecj.tk/log',
+    });
+    Swetrix.trackViews();
+    Swetrix.trackErrors();
+
     function hamburger() {
       var x = document.getElementById("mobile-links");
       if (x.style.display == "flex") {

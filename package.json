@@ -16,6 +16,7 @@
     "astro": "^5.1.8",
     "astro-pagefind": "^1.4.0",
     "js-confetti": "^0.12.0",
-    "pagefind": "^1.0.4"
+    "pagefind": "^1.0.4",
+    "swetrix": "^3.5.4"
   }
 }
