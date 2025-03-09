@@ -78,6 +78,6 @@ The competition structure changed this year with the introduction of a semi-fina
 
 ### Day 7: Even more semi-finals and the awards ceremony
 
-On the final competition day, we returned to complete the same two tasks as the previous day, aiming to improve our execution and earn higher scores. The team's confidence and experience were evident as Bruce performed more smoothly and efficiently than in earlier runs, giving us hope for strong final standings as we headed into the awards ceremony.
+On the final competition day, we returned to complete the same two tasks as the previous day, aiming to improve our execution and earn higher scores. The team's confidence and experience were evident as Bruce performed more smoothly and efficiently than in earlier runs, giving us hope for strong final standings as we headed into the awards ceremony. Our efforts throughout the week were recognized when we received the Data and Discovery award, which came with a $400 prize. This award celebrated our outreach to other teams, interest in learning, collaboration, and willingness to share our gathered data with the Roboboat community. It was a gratifying conclusion to an intense week of competition and a testament to our team's commitment to the spirit of collaborative innovation.
 
 **This post will be updated with additional details and images as the competition progresses.**
