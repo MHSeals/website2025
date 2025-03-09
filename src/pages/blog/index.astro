@@ -66,10 +66,10 @@ const posts = (await getCollection('blog')).sort(
 	}
 	ul li {
 		width: calc(50% - 1rem);
+		transition: all 0.2s ease;
 	}
 	ul li * {
 		text-decoration: none;
-		transition: 0.2s ease;
 	}
 	ul li:first-child {
 		width: 100%;
@@ -85,6 +85,7 @@ const posts = (await getCollection('blog')).sort(
 	ul li img {
 		margin-bottom: 0.5rem;
 		border-radius: 12px;
+		transition: box-shadow 0.2s ease;
 	}
 	ul li a {
 		display: block;
@@ -93,14 +94,21 @@ const posts = (await getCollection('blog')).sort(
 		margin: 0;
 		color: rgb(var(--black));
 		line-height: 1;
+		transition: color 0.2s ease;
 	}
 	.date {
 		margin: 0;
 		color: rgb(var(--gray));
+		transition: color 0.2s ease;
 	}
-	ul li a:hover h4,
-	ul li a:hover .date {
-		color: rgb(var(--accent));
+	ul li:hover {
+		transform: scale(1.005);
+	}
+	ul li:hover .title {
+		color: rgb(var(--coral-pink));
+	}
+	ul li:hover .date {
+		color: rgb(var(--coral-pink));
 	}
 	ul a:hover img {
 		box-shadow: var(--box-shadow);
