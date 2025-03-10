@@ -5,59 +5,51 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout page_title='About'>
 	<main data-pagefind-body>
-		<h1 class="page-title"><img id="information-emoji" src="/emojis/information-source.svg"></img>About Us</h1>
+		<h1 class="page-title"><img id="information-emoji" src="/emojis/information-source.svg"></img>Our Story</h1>
+		
+		<h2>From Dream to Reality</h2>
 		<p>
-			Welcome to the MHS Seals! We are a Roboboat team from James Martin High School in Arlington, Texas.
-			We are currently the only high school team in the Roboboat competition, and we are proud to
-			represent our school and our community. We are a team of students who are passionate about
-			robotics, engineering, and computer science. We are excited to compete in the Roboboat competition
-			and to learn from the experience. We are also excited to share our journey with you, and we hope
-			that you will follow along with us as we prepare for the competition.
+			In 2018, a handful of ambitious students with a shared passion for robotics and engineering 
+			gathered around a simple idea: "What if we could build a boat that thinks for itself?" 
+			After discovering the prestigious RobotX competition, they were captivated by the challenge—and 
+			yes, perhaps also by the prospect of competing in Hawaii. Recognizing the steep learning curve, 
+			these pioneers strategically chose to begin with the Roboboat competition as their entry point 
+			into the world of autonomous marine robotics.
+		</p>
+		<p>
+			Since that moment, we have competed in the Roboboat competition 3 times, improving our boat more and more with each iteration. 
+			What began as a rudimentary prototype has evolved into an increasingly sophisticated autonomous vessel, 
+			with each competition providing invaluable lessons and opportunities for growth. Our team has expanded from 
+			those initial founding members to a diverse group of over 60 students, all contributing their unique talents 
+			to our shared mission of pushing the boundaries of marine autonomy.
 		</p>
 		<Image image='/2025team.jpg' description='2025 Team' />
+		
+		<h2>Our Structure: Many Minds, One Mission</h2>
 		<p>
-			Our team is made up of primarily 4 departmens: Engineering, Computer Science, Electrical Engineering,
-			and Marketing. Each department has its own unique role in the team, and each department is essential
-			to the success of the team. The Engineering department is responsible for designing and building the
-			boat. The Computer Science department is responsible for creating the vision and control systems for
-			the boat. The Electrical Engineering department is responsible for the electrical systems of the boat.
-			The Marketing department is responsible for promoting the team and the competition, as well as finding
-			sponsors and partners for the team.
+			The MHS Seals operates like a well-oiled machine, with four specialized departments working in 
+			synchronized harmony. Each department brings unique skills to the table, and it's this interdisciplinary 
+			approach that has become our greatest strength.
+		</p>
+		
+		<h3>Computer Science Team: The Brain</h3>
+		<p>
+			Our Computer Science department brings our vessel to life with sophisticated algorithms that enable it 
+			to "see," "think," and "decide." From intricate object detection systems that can identify buoys in 
+			variable lighting conditions to navigation algorithms that plot optimal courses through obstacle-filled 
+			waters, this team transforms our boat from a simple vessel into an intelligent marine system.
 		</p>
 		<Image image='/teams/computer-science.jpg' description='Computer Science Team' />
+		
+		<h3>Engineering Team: The Body</h3>
+		<p>
+			The Engineering department crafts the physical embodiment of our ideas. These innovative designers and 
+			builders tackle challenges from hydrodynamics to structural integrity, creating vessels that are 
+			both robust and agile. Their iterative prototyping process has led to breakthrough designs that have 
+			significantly improved our competition performance year after year.
+		</p>
 		<Image image='/teams/engineering.jpg' description='Engineering Team' />
-		<Image image='/teams/electrical.jpg' description='Electrical Engineering Team' />
-		<Image image='/teams/marketing.jpg' description='Marketing Team' />
-	</main>
-</Layout>
-
-<script>
-	import JSConfetti from 'js-confetti';
-
-	document.addEventListener("astro:page-load", () => {
-		const informationEmoji = document.getElementById('information-emoji');
-
-		informationEmoji?.addEventListener('click', () => {
-			const jsConfetti = new JSConfetti()
-
-			jsConfetti.addConfetti();
-		});
-	});
-</script>
-
-<style>
-	ul {
-		list-style-type: none;
-		padding: 0;
-	}
-
-	li {
-		margin-bottom: 1rem;
-	}
-
-	iframe {
-		width: 100%;
-		height: 405px;
-		border-radius: 12px;
-	}
-</style>
+		
+		<h3>Electrical Engineering Team: The Nervous System</h3>
+		<p>
+			Working at the intersection of hardware and software, our Electrical Engineering team designs the

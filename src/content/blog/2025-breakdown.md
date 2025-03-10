@@ -80,10 +80,4 @@ The competition structure changed this year with the introduction of a semi-fina
 
 On the final competition day, we returned to complete the same two tasks as the previous day, aiming to improve our execution and earn higher scores. The team's confidence and experience were evident as Bruce performed more smoothly and efficiently than in earlier runs, giving us hope for strong final standings as we headed into the awards ceremony. Our efforts throughout the week were recognized when we received the Data and Discovery award, which came with a $400 prize. This award celebrated our outreach to other teams, interest in learning, collaboration, and willingness to share our gathered data with the Roboboat community. It was a gratifying conclusion to an intense week of competition and a testament to our team's commitment to the spirit of collaborative innovation.
 
-![Our President holding the check we won](/blog/2025-breakdown/lauren-with-check.jpg)
-*Our team president, Lauren, proudly displays the $400 prize check we received for the Data and Discovery award, recognizing our commitment to collaboration and knowledge sharing.*
-
-![Photo with our friends from team Inspiration](/blog/2025-breakdown/seals-and-inspiration.jpg)
-*Celebrating with friends from team Inspiration, sharing in the camaraderie and mutual respect that defines the Roboboat community.*
-
 **This post will be updated with additional details and images as the competition progresses.**
