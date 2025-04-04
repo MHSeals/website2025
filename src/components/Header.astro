@@ -19,7 +19,7 @@ import { SITE_TITLE } from "../consts";
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
       <div class="dropdown">
-        <HeaderLink id="team_link"
+        <HeaderLink id="team_link" class="dropdown-label"
           >Our Team<span class="material-symbols-outlined">expand_more</span
           ></HeaderLink
         >
@@ -29,6 +29,15 @@ import { SITE_TITLE } from "../consts";
           <HeaderLink href="/engineering">Mechanical Engineering</HeaderLink>
           <HeaderLink href="/electrical">Electrical Engineering</HeaderLink>
           <HeaderLink href="/marketing">Marketing</HeaderLink>
+        </div>
+      </div>
+      <div class="dropdown">
+        <HeaderLink class="dropdown-label"
+          >Previous Years<span class="material-symbols-outlined">expand_more</span
+          ></HeaderLink
+        >
+        <div class="dropdown-content">
+          <HeaderLink href="/year/2025">2025</HeaderLink>
         </div>
       </div>
       <HeaderLink href="/blog">Blog</HeaderLink>
@@ -239,12 +248,12 @@ import { SITE_TITLE } from "../consts";
     z-index: 2;
   }
 
-  #team_link {
+  .dropdown-label {
     display: flex;
     align-items: center;
   }
 
-  #team_link .material-symbols-outlined {
+  .dropdown-label .material-symbols-outlined {
     transform: rotate(0);
     transition: transform 0.1s ease-out;
   }
