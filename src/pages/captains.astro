@@ -107,8 +107,8 @@ import Layout from '../layouts/Layout.astro';
 		  const y = e.clientY - rect.top;
 		  const centerX = rect.width / 2;
 		  const centerY = rect.height / 2;
-		  const rotateX = (centerY - y) / 7;
-		  const rotateY = (x - centerX) / 7;
+		  const rotateX = (centerY - y) / 5;
+		  const rotateY = (x - centerX) / 5;
   
 		  card.style.transform = `scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 		});

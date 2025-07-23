@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-import Layout from "../../layouts/Layout.astro";
+import '../../styles/global.css';
 
 export function getStaticPaths() {
   return [
@@ -11,29 +11,62 @@ export function getStaticPaths() {
 const { year } = Astro.params;
 ---
 
-<Layout page_title={year}>
-    <main data-pagefind-body>
-        <h1>{year} website</h1>
 
-        <iframe src={`https://${year}.mhsroboboat.com/`} title={`${year} website`} />
-    </miin>
-</Layout>
+<div class="overlay">
+  <a href="/">Viewing {year} website. Back to Main Site</a>
+</div>
+
+<main data-pagefind-body>
+    <iframe src={`https://${year}.mhsroboboat.com/`} title={`${year} website`} />
+</main>
 
 <style>
+    .overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        z-index: 1000;
+    }
+    .overlay a {
+        color: #fff;
+        background: rgba(44, 44, 44, 0.829);
+        border: 1px solid #646464;
+        border-bottom: none;
+        backdrop-filter: blur(5px);
+        border-radius: 25px 25px 0 0;
+        padding: 0.1em 1em;
+        cursor: pointer;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.2s ease-in-out;
+    }
+    .overlay a:hover {
+        background: rgba(44, 44, 44, 1);
+    }
+    html {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
     main {
         width: unset !important;
         max-width: unset !important;
-        padding: 1em 0 0 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 0 0 0 0 !important;
+        margin: 0 !important;
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
     }
-
     iframe {
         width: 100%;
         height: 100vh;
         border: none;
-        border-radius: 10px;
     }
 </style>
