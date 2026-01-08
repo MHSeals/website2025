@@ -10,6 +10,7 @@ interface Props {
 	description?: string;
 	image?: string;
     page_title?: string;
+	fullWidth?: boolean;
 }
 
 let {
@@ -17,6 +18,7 @@ let {
     description = SITE_DESCRIPTION,
     image = '/favicon.webp',
     page_title,
+	fullWidth = false,
 } = Astro.props;
 
 if (page_title) {
@@ -33,7 +35,7 @@ if (page_title) {
     <body>
         <div class="container">
             <Header />
-            <layout_main>
+            <layout_main class:list={[{ 'full-width': fullWidth }]}>
                 <slot />
             </layout_main>
             <Footer />

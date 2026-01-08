@@ -1,225 +1,459 @@
 ---
-import Image from '../components/Image.astro';
-import Layout from '../layouts/Layout.astro';
+import Image from "../components/Image.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout page_title='Home'>
+<Layout page_title="Home">
 	<main data-pagefind-body>
-		<h1 hidden>Home</h1> <!-- This is for search purposes -->
-		<img id="waves" src="/waves.svg" alt="MHS Seals" width="900" height="224">
+		<h1 hidden>Home</h1>
+		<!-- This is for search purposes -->
+		<img
+			id="waves"
+			src="/waves.svg"
+			alt="MHS Seals"
+			width="900"
+			height="224"
+		/>
 		<!--<img id="seal-1" src="/seal-1.svg" alt="Seal 1" loading="lazy">
 		<img id="seal-2" src="/seal-2.svg" alt="Seal 2" loading="lazy">-->
 		<div id="post-waves">
-			<p id="top-text-element">
-				Welcome to the MHS Seals! We are a Roboboat team from James Martin High School in Arlington, Texas.
-				We are currently the only high school team in the Roboboat competition, and we are proud to
-				represent our school and our community. We are a team of students who are passionate about
-				robotics, engineering, and computer science. We are excited to compete in the Roboboat competition
-				and to learn from the experience. We are also excited to share our journey with you, and we hope
-				that you will follow along with us as we prepare for the competition.
-			</p>
-			<h3>Departments</h3>
-			<div class="departments">
-				<div id="cs" class="departments__item">
-					<a href="/cs">Computer Science</a>
+			<div class="hero-section">
+				<div class="hero-text">
 					<p>
-						Our computer science team is responsible for everything computers,
-						from setting up the computers on the boat to writing the code that
-						controls the boat.
+						MHS Seals is a student robotics team from James Martin
+						High School in Arlington, Texas. Each year we build an
+						autonomous boat to participate in the RoboNation
+						RoboBoat competition. Our boats are completely designed,
+						built, and programmed by students and must complete a
+						wide range of challenges that are designed to test their
+						autonomous abilities. We aim to further the study of
+						autonomous robotics by providing students with hands-on
+						multidisciplinary design experience in artificial
+						intelligence, computer vision, navigation, mechanical
+						design, electrical systems, and marketing.
 					</p>
 				</div>
-				<div id="engineering" class="departments__item">
-					<a href="/engineering">Engineering</a>
-					<p>
-						Our mechanical engineering team is responsible for designing and building the
-						physical components of the boat, from the hull to the propulsion system.
-					</p>
+				<div class="hero-photos">
+					<img
+						src="/blog/2025-breakdown/launching-boat.jpg"
+						alt="Launching the boat"
+					/>
+					<img
+						src="/blog/2024-competition/2024-competition-1.jpg"
+						alt="2024 Competition"
+					/>
+					<img
+						src="/blog/2025-breakdown/working-on-boat-1.jpg"
+						alt="Working on the boat"
+					/>
+					<img
+						src="/blog/2025-breakdown/seals-and-inspiration.jpg"
+						alt="Team with other competitors"
+					/>
 				</div>
-				<div id="electrical" class="departments__item">
-					<a href="/electrical">Electrical</a>
-					<p>
-						Our electrical engineering team is responsible for designing and building the
-						electrical systems that power the boat and control its components.
-					</p>
-				</div>
-				<div id="marketing" class="departments__item">
-					<a href="/marketing">Marketing</a>
-					<p>
-						Our marketing team is responsible for promoting the team and the
-						competition, as well as raising funds and managing sponsorships.
-					</p>
-				</div>
-				<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/vPBT0u8P_JE?si=3HLxpSINsJwI-ZWp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
+
+			<div class="hero-section">
+				<div class="hero-photos">
+					<img
+						src="/blog/2024-breakdown/awards.jpg"
+						alt="Award ceremony"
+					/>
+					<img
+						src="/blog/2025-breakdown/seals-and-simle.jpg"
+						alt="Team collaboration"
+					/>
+					<img
+						src="/blog/2024-competition/2024-competition-3.jpg"
+						alt="Competition day"
+					/>
+					<img
+						src="/blog/2025-breakdown/working-on-boat-2.jpg"
+						alt="Building the boat"
+					/>
+				</div>
+				<div class="hero-text">
+					<p>
+						As the <strong>only high school team</strong> competing in
+						RoboBoat, we compete alongside universities from around the
+						world. This unique position pushes us to innovate and perform
+						at a collegiate level, proving that age and experience aren't
+						barriers to excellence in robotics. Through this experience,
+						our team members develop advanced skills in software development,
+						electrical engineering, and mechanical design that prepare
+						them for careers in robotics and autonomous systems.
+					</p>
+				</div>
+			</div>
+
+			<div class="hero-section">
+				<div class="hero-text">
+					<p>
+						<strong>Blastoise</strong> is our flagship autonomous boat,
+						designed and built by upperclassmen. This advanced platform
+						showcases our team's most sophisticated engineering, featuring
+						custom-designed hull architecture, state-of-the-art sensor
+						arrays, and intelligent navigation systems. Blastoise represents
+						the culmination of years of refinement and serves as our primary
+						competitor in the RoboBoat competition.
+					</p>
+				</div>
+				<div class="boat-photo">
+					<img
+						src="/blastoise-nobg.png"
+						alt="Blastoise"
+						style="grid-column: 1 / -1; height: 400px;"
+					/>
+				</div>
+			</div>
+
+			<div class="hero-section">
+				<div class="boat-photo">
+					<img
+						src="/squirtle-nobg.png"
+						alt="Squirtle"
+						style="grid-column: 1 / -1; height: 400px;"
+					/>
+				</div>
+				<div class="hero-text">
+					<p>
+						<strong>Squirtle</strong> is our second boat, designed and
+						built by underclassmen as a learning platform. This boat gives
+						newer team members the opportunity to gain hands-on experience
+						in all aspects of autonomous boat design, from mechanical
+						fabrication to software development. Through Squirtle, students
+						develop the foundational skills they need to contribute to
+						future iterations of Blastoise and advance their engineering
+						expertise.
+					</p>
+				</div>
+			</div>
+
+			<div class="info-sections">
+				<a href="/about" class="info-section">
+					<img src="/2025team.jpg" alt="The Team" />
+					<div class="info-content">
+						<h2>The Team</h2>
+						<p>
+							MHS Seals has members across many different skill
+							levels and interests. We are organized into several
+							departments: Computer Science, Electrical,
+							Engineering, and Marketing. Each department works
+							together to design, build, and compete with our
+							autonomous boats.
+						</p>
+					</div>
+				</a>
+
+				<a href="/blog" class="info-section">
+					<img src="/boat_test1.jpg" alt="Competition" />
+					<div class="info-content">
+						<h2>Competition</h2>
+						<p>
+							The RoboBoat competition is an international
+							competition where students design, build, and
+							compete with self-driving robotic boats in a series
+							of tests aimed at challenging teams through a
+							variety of autonomous tasks. We are currently the
+							only high school team in the competition.
+						</p>
+					</div>
+				</a>
+			</div>
+			<iframe
+				loading="lazy"
+				src="https://www.youtube-nocookie.com/embed/vPBT0u8P_JE?si=3HLxpSINsJwI-ZWp"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen></iframe>
+			<!-- This is the only way to not have these blurry -->
+			<img
+				id="waves-bottom"
+				src="/waves_flipped.svg"
+				alt="Waves"
+				loading="lazy"
+				width="900"
+				height="224"
+			/>
 		</div>
-		<!-- This is the only way to not have these blurry -->
-		<img id="waves-bottom" src="/waves_flipped.svg" alt="Waves" loading="lazy" width="900" height="224">
+
+		<style>
+			main {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				max-width: 100vw;
+				margin: 0;
+				padding: 3em 0 0 0;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			h1 {
+				position: absolute;
+				top: 25%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 6em;
+			}
+
+			#waves,
+			#waves-bottom {
+				user-drag: none;
+				user-select: none;
+				-moz-user-select: none;
+				-webkit-user-drag: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+			}
+
+			#waves {
+				width: 100%;
+				border-radius: 0;
+			}
+
+			#seal-1 {
+				position: absolute;
+				top: 1000px;
+				left: 10px;
+				height: 500px;
+				z-index: 1;
+			}
+
+			#seal-2 {
+				position: absolute;
+				top: 1600px;
+				right: 30px;
+				height: 500px;
+				z-index: 1;
+			}
+
+			#post-waves {
+				background-color: #375fca;
+				color: white;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+			}
+
+			.hero-section {
+				display: flex;
+				flex-direction: row;
+				gap: 2rem;
+				width: 100%;
+				max-width: 1400px;
+				margin-bottom: 3em;
+				align-items: center;
+			}
+
+			.hero-section-reverse {
+				flex-direction: row-reverse;
+			}
+
+			.hero-text {
+				flex: 1;
+				max-width: 600px;
+			}
+
+			.hero-text p {
+				color: white;
+				font-size: 1.1em;
+				line-height: 1.6;
+				margin: 0;
+			}
+
+			.hero-photos {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+				flex: 1;
+			}
+
+			.hero-photos img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 8px;
+				transition: transform 0.2s ease;
+			}
+
+			.hero-photos img:hover {
+				transform: scale(1.02);
+			}
+
+			.boat-photo {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.boat-photo img {
+				width: 100%;
+				height: 200px;
+				object-fit: contain;
+				border-radius: 8px;
+				transition: transform 0.2s ease;
+			}
+
+			.boat-photo img:hover {
+				transform: scale(1.02);
+			}
+
+			.info-sections {
+				display: flex;
+				justify-content: center;
+				gap: 2rem;
+				width: 100%;
+				max-width: 1400px;
+				margin-bottom: 3rem;
+				flex-wrap: wrap;
+			}
+
+			.info-section {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				align-items: flex-start;
+				text-decoration: none;
+				color: white;
+				transition: all 0.2s ease;
+				cursor: pointer;
+				border-radius: 12px;
+				padding: 0.1rem;
+				flex: 0 1 calc((min(100%, 1400px) - 4rem) / 3);
+			}
+
+			.info-section:hover {
+				transform: translateY(-5px);
+				background-color: #3c68e0;
+				-webkit-box-shadow: 0px 0px 14px 16px #3c68e0;
+				box-shadow: 0px 0px 14px 16px #3c68e0;
+			}
+
+			.info-section img {
+				width: 100%;
+				height: 250px;
+				object-fit: cover;
+				border-radius: 8px;
+				flex-shrink: 0;
+			}
+
+			.info-content {
+				flex: 1;
+			}
+
+			.info-content h2 {
+				margin-top: 0;
+				margin-bottom: 0.5rem;
+				color: white;
+			}
+
+			.info-content p {
+				color: white;
+				margin: 0;
+				line-height: 1.6;
+			}
+
+			iframe {
+				width: 100%;
+				max-width: 768px;
+				aspect-ratio: 16 / 9;
+				border-radius: 12px;
+			}
+
+			#waves-bottom {
+				width: 100%;
+				border-radius: 0;
+				background-color: rgb(var(--gray-lighter));
+			}
+
+			@media screen and (max-width: 800px) {
+				#waves {
+					width: 100%;
+					content: url("/waves_mobile.svg");
+				}
+
+				#waves-bottom {
+					width: 100%;
+					content: url("/waves_flipped_mobile.svg");
+				}
+
+				#post-waves {
+					padding: 1.5em 1em;
+				}
+
+				.hero-section {
+					flex-direction: column;
+					gap: 1.5rem;
+				}
+
+				.hero-text p {
+					font-size: 1em;
+				}
+
+				.hero-photos {
+					grid-template-columns: 1fr;
+					max-width: 350px;
+					margin: 0 auto;
+				}
+
+				#intro-text {
+					font-size: 1em;
+					margin-bottom: 2em;
+				}
+
+				.info-sections {
+					width: 95%;
+					gap: 2rem;
+				}
+
+				.info-section {
+					flex-direction: column;
+					gap: 1rem;
+				}
+
+				.info-section img {
+					width: 100%;
+					height: auto;
+					max-width: 350px;
+					align-self: center;
+				}
+
+				#roboboat-team {
+					width: 95%;
+					justify-content: center;
+				}
+
+				#roboboat-team img {
+					height: 4rem;
+				}
+
+				#roboboat-team h2 {
+					height: 1rem;
+					font-size: 1.5rem;
+				}
+
+				.departments {
+					flex-wrap: wrap;
+					width: 95%;
+				}
+
+				.departments a {
+					width: 45%;
+				}
+
+				iframe {
+					width: 100%;
+				}
+			}
+		</style>
 	</main>
 </Layout>
-
-<style>
-	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		max-width: 100vw;
-		margin: 0;
-		padding: 3em 0 0 0;
-	}
-
-	body {
-		margin: 0;
-		padding: 0;
-	}
-
-	h1 {
-		position: absolute;
-		top: 25%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		font-size: 6em;
-	}
-
-	#waves, #waves-bottom {
-		user-drag: none; 
-		user-select: none;
-		-moz-user-select: none;
-		-webkit-user-drag: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-	}
-
-	#waves {
-		width: 100%;
-		border-radius: 0;
-	}
-
-	#seal-1 {
-		position: absolute;
-		top: 1000px;
-		left: 10px;
-		height: 500px;
-		z-index: 1;
-	}
-
-	#seal-2 {
-		position: absolute;
-		top: 1600px;
-		right: 30px;
-		height: 500px;
-		z-index: 1;
-	}
-
-	#post-waves {
-		background-color: #375fca;
-		color: white;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		padding: 1em 0;
-	}
-
-	#post-waves p, #post-waves h2, #post-waves h3 {
-		color: white;
-		max-width: 768px;
-	}
-
-	.departments {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		/* gap: 1rem; */
-		margin-top: 1rem;
-		margin-bottom: 2rem;
-		width: 768px;
-	}
-
-	.departments a {
-		padding: 1.5em 1em;
-		border: 1px solid transparent;
-		border-radius: 12px;
-		background-color: #4182cc;
-		color: white;
-		min-width: 25%;
-		text-align: center;
-		text-decoration: none;
-		transition: all 0.2s;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.departments a:hover {
-		background-color: var(--coral-pink);
-		transform: scale(1.05) rotate(1deg);
-	}
-
-	.departments__item {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 2rem;
-	}
-
-	iframe {
-		width: 768px;
-		aspect-ratio: 16 / 9;
-		border-radius: 12px;
-	}
-
-	#waves-bottom {
-		width: 100%;
-		border-radius: 0;
-		background-color: rgb(var(--gray-lighter));
-	}
-
-	@media screen and (max-width: 800px){
-		#waves {
-			width: 100%;
-			content: url("/waves_mobile.svg");
-		}
-
-		#waves-bottom {
-			width: 100%;
-			content: url("/waves_flipped_mobile.svg");
-		}
-
-		#post-waves {
-			padding-top: 1em;
-		}
-
-		#post-waves p, #post-waves h3 {
-			max-width: 90%;
-		}
-		
-		#roboboat-team {
-			width: 95%;
-			justify-content: center;
-		}
-
-		#roboboat-team img {
-			height: 4rem;
-		}
-
-		#roboboat-team h2 {
-			height: 1rem;
-			font-size: 1.5rem;
-		}
-
-		.departments {
-			flex-wrap: wrap;
-			width: 95%;
-		}
-
-		.departments a {
-			width: 45%;
-		}
-
-		iframe {
-			width: 100%;
-		}
-	}
-</style>

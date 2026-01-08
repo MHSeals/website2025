@@ -3,94 +3,128 @@ import Image from "../components/Image.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout page_title="About">
+<Layout page_title="About" fullWidth={true}>
 	<main data-pagefind-body>
-		<h1 class="page-title">
-			<img id="information-emoji" src="/emojis/information-source.svg" />Our Story
-		</h1>
+		<div class="content-wrapper">
+			<h1 class="page-title">
+				<img id="information-emoji" src="/emojis/information-source.svg" />Our Story
+			</h1>
 
-		<h3>From Dream to Reality</h3>
-		<p>
-			In 2018, a handful of ambitious students with a shared passion for
-			robotics and engineering gathered around a simple idea: "What if we
-			could build a boat that thinks for itself?" After discovering the
-			prestigious RobotX competition, they were captivated by the
-			challenge—and yes, perhaps also by the prospect of competing in
-			Hawaii. Recognizing the steep learning curve, these pioneers
-			strategically chose to begin with the Roboboat competition as their
-			entry point into the world of autonomous marine robotics.
-		</p>
-		<p>
-			Since that moment, we have competed in the Roboboat competition 3
-			times, improving our boat more and more with each iteration. What
-			began as a rudimentary prototype has evolved into an increasingly
-			sophisticated autonomous vessel, with each competition providing
-			invaluable lessons and opportunities for growth. Our team has
-			expanded from those initial founding members to a diverse group of
-			over 60 students, all contributing their unique talents to our
-			shared mission of pushing the boundaries of marine autonomy.
-		</p>
-		<Image image="/2025team.jpg" description="2025 Team" />
+			<div class="hero-section">
+			<div class="hero-text">
+				<h3>From Dream to Reality</h3>
+				<p>
+					In 2018, a handful of ambitious students with a shared passion for
+					robotics and engineering gathered around a simple idea: "What if we
+					could build a boat that thinks for itself?" After discovering the
+					prestigious RobotX competition, they were captivated by the
+					challenge—and yes, perhaps also by the prospect of competing in
+					Hawaii. Recognizing the steep learning curve, these pioneers
+					strategically chose to begin with the Roboboat competition as their
+					entry point into the world of autonomous marine robotics.
+				</p>
+				<p>
+					Since that moment, we have competed in the Roboboat competition 4
+					times, improving our boat more and more with each iteration. What
+					began as a rudimentary prototype has evolved into an increasingly
+					sophisticated autonomous vessel, with each competition providing
+					invaluable lessons and opportunities for growth. Our team has
+					expanded from those initial founding members to a diverse group of
+					over 60 students, all contributing their unique talents to our
+					shared mission of pushing the boundaries of marine autonomy.
+				</p>
+			</div>
+			<div class="hero-photos">
+				<Image image="/2025team.jpg" description="2025 Team" showDescription={false} />
+				<Image image="/blog/2024-breakdown/awards.jpg" description="Award Ceremony" showDescription={false} />
+			</div>
+		</div>
 
-		<h3>Our Structure: Many Minds, One Mission</h3>
-		<p>
+		<h2 class="section-title">Our Structure: Many Minds, One Mission</h2>
+		<p class="section-intro">
 			The MHS Seals operates like a well-oiled machine, with four
 			specialized departments working in synchronized harmony. Each
-			department brings unique skills to the table, and it's this
+			department brings unique skills to the table, and it is this
 			interdisciplinary approach that has become our greatest strength.
 		</p>
 
-		<h4>Computer Science Team: The Brain</h4>
-		<p>
-			Our Computer Science department brings our vessel to life with
-			sophisticated algorithms that enable it to "see," "think," and
-			"decide." From intricate object detection systems that can identify
-			buoys in variable lighting conditions to navigation algorithms that
-			plot optimal courses through obstacle-filled waters, this team
-			transforms our boat from a simple vessel into an intelligent marine
-			system.
-		</p>
-		<Image
-			image="/teams/computer-science.jpg"
-			description="Computer Science Team"
-		/>
+		<div class="department-section">
+			<div class="department-photo">
+				<Image image="/teams/computer-science.jpg" description="Computer Science Team" showDescription={false} />
+			</div>
+			<div class="department-text">
+				<h3><a href="/cs">Computer Science Team</a></h3>
+				<p>
+					Our Computer Science department brings our vessel to life with
+					sophisticated algorithms that enable it to "see," "think," and
+					"decide." From intricate object detection systems that can identify
+					buoys in variable lighting conditions to navigation algorithms that
+					plot optimal courses through obstacle-filled waters, this team
+					transforms our boat from a simple vessel into an intelligent marine
+					system.
+				</p>
+			</div>
+		</div>
 
-		<h4>Engineering Team: The Body</h4>
-		<p>
-			The Engineering department crafts the physical embodiment of our
-			ideas. These innovative designers and builders tackle challenges
-			from hydrodynamics to structural integrity, creating vessels that
-			are both robust and agile. Their iterative prototyping process has
-			led to breakthrough designs that have significantly improved our
-			competition performance year after year.
-		</p>
-		<Image image="/teams/engineering.jpg" description="Engineering Team" />
+		<div class="department-section reverse">
+			<div class="department-text">
+				<h3><a href="/engineering">Engineering Team</a></h3>
+				<p>
+					The Engineering department crafts the physical embodiment of our
+					ideas. These innovative designers and builders tackle challenges
+					from hydrodynamics to structural integrity, creating vessels that
+					are both robust and agile. Their iterative prototyping process has
+					led to breakthrough designs that have significantly improved our
+					competition performance year after year.
+				</p>
+			</div>
+			<div class="department-photo">
+				<Image image="/teams/engineering.jpg" description="Engineering Team" showDescription={false} />
+			</div>
+		</div>
 
-		<h4>Electrical Engineering Team: The Nervous System</h4>
-		<p>
-			The Electrical Engineering department is the nervous system of our
-			boat, ensuring that all components communicate effectively and
-			reliably. From power distribution to sensor integration, this team
-			ensures that our vessel's electrical systems are not only functional
-			but also optimized for performance. Their expertise in circuit
-			design and electrical theory is critical to the success of our
-			autonomous marine systems.
-		</p>
-		<Image
-			image="/teams/electrical.jpg"
-			description="Electrical Engineering Team"
-		/>
+		<div class="department-section">
+			<div class="department-photo">
+				<Image image="/teams/electrical.jpg" description="Electrical Engineering Team" showDescription={false} />
+			</div>
+			<div class="department-text">
+				<h3><a href="/electrical">Electrical Engineering Team</a></h3>
+				<p>
+					The Electrical Engineering department is the nervous system of our
+					boat, ensuring that all components communicate effectively and
+					reliably. From power distribution to sensor integration, this team
+					ensures that our vessel's electrical systems are not only functional
+					but also optimized for performance. Their expertise in circuit
+					design and electrical theory is critical to the success of our
+					autonomous marine systems.
+				</p>
+			</div>
+		</div>
 
-		<h4>Marketing Team: The Voice</h4>
-		<p>
-			Our Marketing department is the public face of the MHS Seals,
-			responsible for sharing our story with the world. From managing
-			social media channels to securing sponsorships, this team ensures
-			that our message reaches far and wide. Their efforts have not only
-			raised awareness of our team but also secured critical funding that
-			has enabled us to compete at the highest levels.
-		</p>
-		<Image image="/teams/marketing.jpg" description="Marketing Team" />
+		<div class="department-section reverse">
+			<div class="department-text">
+				<h3><a href="/marketing">Marketing Team</a></h3>
+				<p>
+					Our Marketing department is the public face of the MHS Seals,
+					responsible for sharing our story with the world. From managing
+					social media channels to securing sponsorships, this team ensures
+					that our message reaches far and wide. Their efforts have not only
+					raised awareness of our team but also secured critical funding that
+					has enabled us to compete at the highest levels.
+				</p>
+			</div>
+			<div class="department-photo">
+				<Image image="/teams/marketing.jpg" description="Marketing Team" showDescription={false} />
+			</div>
+		</div>
+
+		<div class="leadership-section">
+			<h3><a href="/captains">Meet Our Leadership</a></h3>
+			<p>
+				Learn more about the captains and leaders who guide each department and coordinate our team's efforts.
+			</p>
+		</div>
+		</div>
 	</main>
 </Layout>
 
@@ -109,6 +143,137 @@ import Layout from "../layouts/Layout.astro";
 </script>
 
 <style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding: 0;
+	}
+
+	.content-wrapper {
+		width: 100%;
+		max-width: 1400px;
+		padding: 1em 2rem 3em 2rem;
+	}
+
+	.hero-section {
+		display: flex;
+		flex-direction: row;
+		gap: 2rem;
+		margin: 2rem 0 3em 0;
+		align-items: center;
+	}
+
+	.hero-text {
+		flex: 1;
+	}
+
+	.hero-photo {
+		flex: 1;
+		max-width: 500px;
+	}
+
+	.hero-photos {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		flex: 1;
+		max-width: 500px;
+	}
+
+	.hero-photos img {
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+	}
+
+	.section-title {
+		text-align: center;
+		margin: 3rem 0 1rem 0;
+		font-size: 2em;
+	}
+
+	.section-intro {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 3rem auto;
+		font-size: 1.1em;
+		line-height: 1.6;
+	}
+
+	.department-section {
+		display: flex;
+		flex-direction: row;
+		gap: 2rem;
+		margin: 3rem 0;
+		align-items: center;
+	}
+
+	.department-section.reverse {
+		flex-direction: row-reverse;
+	}
+
+	.department-text {
+		flex: 1;
+	}
+
+	.department-text h3 {
+		margin-top: 0;
+	}
+
+	.department-text h3 a {
+		color: inherit;
+		text-decoration: none;
+		border-bottom: 2px solid currentColor;
+		transition: color 0.2s;
+	}
+
+	.department-text h3 a:hover {
+		color: var(--coral-pink);
+	}
+
+	.department-photo {
+		flex: 1;
+		max-width: 500px;
+	}
+
+	.leadership-section {
+		text-align: center;
+		margin: 4rem 0 2rem 0;
+		padding: 2rem;
+		background-color: rgba(255, 255, 255, 0.05);
+		border-radius: 12px;
+	}
+
+	.leadership-section h3 {
+		margin-top: 0;
+	}
+
+	.leadership-section h3 a {
+		color: inherit;
+		text-decoration: none;
+		border-bottom: 2px solid currentColor;
+		transition: color 0.2s;
+	}
+
+	.leadership-section h3 a:hover {
+		color: var(--coral-pink);
+	}
+
+	@media (max-width: 800px) {
+		.hero-section,
+		.department-section,
+		.department-section.reverse {
+			flex-direction: column;
+		}
+
+		.hero-photo,
+		.department-photo {
+			max-width: 100%;
+		}
+	}
+
 	ul {
 		list-style-type: none;
 		padding: 0;

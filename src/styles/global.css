@@ -44,6 +44,12 @@ main {
   margin: auto;
   padding: 3em 1em;
 }
+
+layout_main.full-width main {
+  width: 100%;
+  max-width: 100%;
+  padding: 3em 0;
+}
 h1,
 h2,
 h3,
