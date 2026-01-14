@@ -1,23 +1,98 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Image from '../components/Image.astro';
+import Layout from "../layouts/Layout.astro";
+import Image from "../components/Image.astro";
 ---
 
-<Layout page_title='Electrical'>
+<Layout page_title="Electrical">
 	<main data-pagefind-body>
-		<h1 class="page-title"><img src="/emojis/high-voltage-sign.svg"></img>Electrical Engineering</h1>
+		<h1 class="page-title">
+			<img src="/emojis/high-voltage-sign.svg" />Electrical Engineering
+		</h1>
 		<p>
-			The electrical team designs the electrical systems
-			in the boat. We have to make sure all the components
-			get the right amount of power and that our batteries
-			can last long enough for the competition. We also
-			have to make sure that all the sensors and instruments
-			that are used by the CS team are wired correctly to
-			the computers. Being on this team supposedly involves
-			using math, being able to use electrical tools properly,
-			and knowledge of electricity and electronic components.
+			Our electrical engineering department is responsible for the
+			everything electronic with the boat like the power distribution and
+			the physical hardware that brings everything together. This year, we
+			developed a new frame in Fusion 360 to house all our electronics
+			which ensure that every component has a stable place to sit. This
+			infrastructure acts as the spine for the entire system, making sure
+			everything stays stable no matter what.
+		</p>
+		<p>
+			We also use a good bit of KiCad to design custom schematics and
+			PCBs. This year, our focus included designing new Power Management
+			Systems that allow us to regulate voltage from our battery cells to
+			expand their usable lifespan. We also designed custom hot-swapping
+			systems that allow our team to change batteries without having to
+			shut down the main computer. This design process ensures that we
+			meet the requirements of every subsystem on board and limit failures
+			across the boat.
+		</p>
+		<p>
+			The electrical workflow is a 50-50 split between digital design and
+			physical implementation. Once schematics and CADs are complete, we
+			move on into hands-on work. This includes soldering components onto
+			PCBs, gluing parts together, and crimping the final wires onto our
+			bus bars. We personally test every connection rigorously to make
+			sure the boat can handle any environment, which helps us align with
+			Roboboat's goal of designing boats to handle real-world challenges.
 		</p>
 
-		<Image image="/electrical-1.jpg" description="Electrical systems on the boat" />
+
+		<section class="elec-gallery" aria-label="Electrical team photos">
+			<div class="elec-gallery-grid">
+				<Image
+					image="/elec/elec-1.png"
+					description="BMS Board"
+					loading="lazy"
+					decoding="async"
+					wrapperClass="elec-gallery-item"
+				/>
+				<Image
+					image="/elec/elec-2.png"
+					description="Battery Hotswap System"
+					loading="lazy"
+					decoding="async"
+					wrapperClass="elec-gallery-item"
+				/>
+			</div>
+		</section>
 	</main>
 </Layout>
+
+<style>
+	.elec-gallery {
+		margin-top: 2rem;
+	}
+
+	.elec-gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.elec-gallery-grid :global(.elec-gallery-item) {
+		margin-top: 0;
+	}
+
+	.elec-gallery-grid :global(.elec-gallery-item a) {
+		display: block;
+	}
+
+	.elec-gallery-grid :global(.elec-gallery-item img) {
+		display: block;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+	}
+
+	.elec-gallery-grid :global(.elec-gallery-item p) {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+
+	@media (max-width: 720px) {
+		.elec-gallery-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

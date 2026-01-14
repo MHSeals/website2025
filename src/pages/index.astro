@@ -34,42 +34,50 @@ import Layout from "../layouts/Layout.astro";
 					</p>
 				</div>
 				<div class="hero-photos">
-					<img
-						src="/blog/2025-breakdown/launching-boat.jpg"
-						alt="Launching the boat"
+					<Image
+						image="/blog/2025-breakdown/launching-boat.jpg"
+						description="Launching the boat"
+						showDescription={false}
 					/>
-					<img
-						src="/blog/2024-competition/2024-competition-1.jpg"
-						alt="2024 Competition"
+					<Image
+						image="/blog/2024-competition/2024-competition-1.jpg"
+						description="2024 Competition"
+						showDescription={false}
 					/>
-					<img
-						src="/blog/2025-breakdown/working-on-boat-1.jpg"
-						alt="Working on the boat"
+					<Image
+						image="/blog/2025-breakdown/working-on-boat-1.jpg"
+						description="Working on the boat"
+						showDescription={false}
 					/>
-					<img
-						src="/blog/2025-breakdown/seals-and-inspiration.jpg"
-						alt="Team with other competitors"
+					<Image
+						image="/blog/2025-breakdown/seals-and-inspiration.jpg"
+						description="Team with other competitors"
+						showDescription={false}
 					/>
 				</div>
 			</div>
 
 			<div class="hero-section">
 				<div class="hero-photos">
-					<img
-						src="/blog/2024-breakdown/awards.jpg"
-						alt="Award ceremony"
+					<Image
+						image="/blog/2024-breakdown/awards.jpg"
+						description="Award ceremony"
+						showDescription={false}
 					/>
-					<img
-						src="/blog/2025-breakdown/seals-and-simle.jpg"
-						alt="Team collaboration"
+					<Image
+						image="/blog/2025-breakdown/seals-and-simle.jpg"
+						description="Team collaboration"
+						showDescription={false}
 					/>
-					<img
-						src="/blog/2024-competition/2024-competition-3.jpg"
-						alt="Competition day"
+					<Image
+						image="/blog/2024-competition/2024-competition-3.jpg"
+						description="Competition day"
+						showDescription={false}
 					/>
-					<img
-						src="/blog/2025-breakdown/working-on-boat-2.jpg"
-						alt="Building the boat"
+					<Image
+						image="/blog/2025-breakdown/working-on-boat-2.jpg"
+						description="Building the boat"
+						showDescription={false}
 					/>
 				</div>
 				<div class="hero-text">
@@ -99,9 +107,10 @@ import Layout from "../layouts/Layout.astro";
 					</p>
 				</div>
 				<div class="boat-photo">
-					<img
-						src="/blastoise-nobg.png"
-						alt="Blastoise"
+					<Image
+						image="/blastoise-nobg.png"
+						description="Blastoise"
+						showDescription={false}
 						style="grid-column: 1 / -1; height: 400px;"
 					/>
 				</div>
@@ -109,9 +118,10 @@ import Layout from "../layouts/Layout.astro";
 
 			<div class="hero-section">
 				<div class="boat-photo">
-					<img
-						src="/squirtle-nobg.png"
-						alt="Squirtle"
+					<Image
+						image="/squirtle-nobg.png"
+						description="Squirtle"
+						showDescription={false}
 						style="grid-column: 1 / -1; height: 400px;"
 					/>
 				</div>
@@ -216,6 +226,8 @@ import Layout from "../layouts/Layout.astro";
 			#waves {
 				width: 100%;
 				border-radius: 0;
+				display: block;
+				margin-bottom: -1px;
 			}
 
 			#seal-1 {
@@ -276,7 +288,15 @@ import Layout from "../layouts/Layout.astro";
 				flex: 1;
 			}
 
-			.hero-photos img {
+			:global(.hero-photos .image) {
+				margin-top: 0;
+			}
+
+			:global(.hero-photos .image a) {
+				display: block;
+			}
+
+			:global(.hero-photos .image img) {
 				width: 100%;
 				height: 200px;
 				object-fit: cover;
@@ -284,7 +304,7 @@ import Layout from "../layouts/Layout.astro";
 				transition: transform 0.2s ease;
 			}
 
-			.hero-photos img:hover {
+			:global(.hero-photos .image img:hover) {
 				transform: scale(1.02);
 			}
 
@@ -295,15 +315,25 @@ import Layout from "../layouts/Layout.astro";
 				align-items: center;
 			}
 
-			.boat-photo img {
+			:global(.boat-photo .image) {
+				margin-top: 0;
+				margin: 0;
 				width: 100%;
-				height: 200px;
+			}
+
+			:global(.boat-photo .image a) {
+				display: block;
+			}
+
+			:global(.boat-photo .image img) {
+				width: 100%;
+				height: 400px;
 				object-fit: contain;
 				border-radius: 8px;
 				transition: transform 0.2s ease;
 			}
 
-			.boat-photo img:hover {
+			:global(.boat-photo .image img:hover) {
 				transform: scale(1.02);
 			}
 
@@ -336,6 +366,10 @@ import Layout from "../layouts/Layout.astro";
 				background-color: #3c68e0;
 				-webkit-box-shadow: 0px 0px 14px 16px #3c68e0;
 				box-shadow: 0px 0px 14px 16px #3c68e0;
+			}
+
+			.info-section:hover h2 {
+				text-decoration: underline;
 			}
 
 			.info-section img {

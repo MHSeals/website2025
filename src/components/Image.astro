@@ -1,30 +1,41 @@
 ---
-interface Props {
-  image: string;
-  description?: string;
-  link?: string;
-  showDescription?: boolean | string;
+interface Props extends Omit<astroHTML.JSX.ImgHTMLAttributes, 'src' | 'alt'> {
+    image: string;
+    description?: string;
+    link?: string;
+    link_target?: string;
+    showDescription?: boolean | string;
+    wrapperClass?: string;
+    wrapperStyle?: string;
 }
 
 let {
     description,
     image,
     link,
-    showDescription = true
-} = Astro.props;
+    link_target = '_self',
+    showDescription = true,
+    wrapperClass,
+    wrapperStyle,
+    ...imgAttrs
+} = Astro.props as Props;
 
 if (typeof showDescription === 'string') {
     showDescription = showDescription.toLowerCase() === 'true';
 }
+
+if (link === undefined) {
+    // link should link to the image itself if not provided
+    link = image;
+    link_target = '_blank';
+}
 ---
 
-<div class="image">
-    {link && <a href={link}>
-        <img src={image} alt={description} />
+<div class={`image${wrapperClass ? ` ${wrapperClass}` : ''}`} style={wrapperStyle}>
+    {link && <a href={link} target={link_target}>
+        <img {...imgAttrs} src={image} alt={description ?? ''} />
     </a>}
-    {!link && <img src={image} alt={
-        description
-    } />}
+    {!link && <img {...imgAttrs} src={image} alt={description ?? ''} />}
     {showDescription && description && <p><em>{description}</em></p>}
 </div>
 

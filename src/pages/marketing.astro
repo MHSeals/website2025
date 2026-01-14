@@ -1,20 +1,104 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Image from "../components/Image.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout page_title='Marketing'>
+<Layout page_title="Marketing">
 	<main data-pagefind-body>
 		<h1 class="page-title"><img src="/emojis/man-in-tuxedo-tone-3.svg"></img>Marketing</h1>
 		<p>
-			The marketing team works to showcase our RoboBoat team,
-			collect & create content, and reach out to sponsors to
-			fund the future of the MHS Seals. We are responsible for
-			advertising the MHS Seals to sponsors and furthering
-			communication between committees by updating them with
-			posts and meetings during workshops, as well as through
-			the Technical Design Report (TDR). The marketing team also
-			serves the MHS Seals by making promotional content, including
-			the annual RoboBoat competition video, to document our progress throughout the year. 
+			The MHS Seal’s marketing department is the voice and image of our
+			team. Through thoughtful storytelling and creative design, we
+			showcase innovation, teamwork, and dedication through pictures. From
+			capturing high-quality photos at workshops and competitions to
+			editing videos, our team documents every step of the journey and
+			brings it to life.
 		</p>
+		<p>
+			Beyond content creation, we manage our social media platforms to
+			keep our community informed. By sharing updates and
+			behind-the-scenes moments we document the whole journey of the boat.
+			Our marketing team also plays a critical role in securing
+			sponsorships, ensuring our team has the resources needed to succeed.
+		</p>
+
+		<div class="gallery">
+			<div class="tile hero">
+				<Image
+					image="/marketing/20251124_201347_791BEE.jpg"
+				/>
+			</div>
+			<div class="tile portrait">
+				<Image
+					image="/marketing/20251103_185609_71B7E9.jpg"
+				/>
+			</div>
+			<div class="tile">
+				<Image
+					image="/marketing/20250711_174414_78B261.jpg"
+				/>
+			</div>
+			<div class="tile">
+				<Image
+					image="/marketing/20250823_221209_73E789.jpg"
+				/>
+			</div>
+		</div>
 	</main>
 </Layout>
+
+<style>
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.2rem;
+		margin-top: 1rem;
+		align-items: start;
+	}
+
+	.gallery :global(.image) {
+		margin-top: 0;
+	}
+
+	.gallery :global(.image img) {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.gallery .tile:not(.hero) :global(.image img) {
+		height: 300px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.portrait :global(.image img) {
+		height: 100%;
+		min-height: calc(600px + 1.2rem);
+	}
+
+	.hero {
+		grid-column: 1 / -1;
+	}
+
+	.hero :global(.image img) {
+		width: 100%;
+		aspect-ratio: 2 / 1;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.portrait {
+		grid-row: span 2;
+	}
+
+	@media (max-width: 720px) {
+		.gallery {
+			grid-template-columns: 1fr;
+		}
+
+		.hero :global(.image img) {
+			height: 300px;
+		}
+	}
+</style>
