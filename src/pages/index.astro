@@ -22,8 +22,8 @@ import Layout from "../layouts/Layout.astro";
 					<p>
 						MHS Seals is a student robotics team from James Martin
 						High School in Arlington, Texas. Each year we build an
-						autonomous boat to participate in the RoboNation
-						RoboBoat competition. Our boats are completely designed,
+						autonomous boat to participate in the <a class="inline-link" href="https://www.roboboat.org/" target="_blank" rel="noopener noreferrer">RoboNation
+						RoboBoat competition</a>. Our boats are completely designed,
 						built, and programmed by students and must complete a
 						wide range of challenges that are designed to test their
 						autonomous abilities. We aim to further the study of
@@ -57,8 +57,8 @@ import Layout from "../layouts/Layout.astro";
 				</div>
 			</div>
 
-			<div class="hero-section">
-				<div class="hero-photos">
+			<div class="hero-section hero-section-secondary">
+				<div class="hero-photos hero-photos-secondary">
 					<Image
 						image="/blog/2024-breakdown/awards.jpg"
 						description="Award ceremony"
@@ -94,7 +94,7 @@ import Layout from "../layouts/Layout.astro";
 				</div>
 			</div>
 
-			<div class="hero-section">
+			<div class="hero-section boat-section">
 				<div class="hero-text">
 					<p>
 						<strong>Blastoise</strong> is our flagship autonomous boat,
@@ -116,7 +116,7 @@ import Layout from "../layouts/Layout.astro";
 				</div>
 			</div>
 
-			<div class="hero-section">
+			<div class="hero-section boat-section">
 				<div class="boat-photo">
 					<Image
 						image="/squirtle-nobg.png"
@@ -143,7 +143,20 @@ import Layout from "../layouts/Layout.astro";
 				<a href="/about" class="info-section">
 					<img src="/2025team.jpg" alt="The Team" />
 					<div class="info-content">
-						<h2>The Team</h2>
+						<h2>The Team
+							<svg
+								class="info-section-icon"
+								xmlns="http://www.w3.org/2000/svg"
+								height="24px"
+								width="24px"
+								viewBox="0 -960 960 960"
+								fill="currentColor"
+								aria-hidden="true"
+								focusable="false"
+							>
+								<path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+							</svg>
+						</h2>
 						<p>
 							MHS Seals has members across many different skill
 							levels and interests. We are organized into several
@@ -158,7 +171,20 @@ import Layout from "../layouts/Layout.astro";
 				<a href="/blog" class="info-section">
 					<img src="/boat_test1.jpg" alt="Competition" />
 					<div class="info-content">
-						<h2>Competition</h2>
+						<h2>Competition
+							<svg
+								class="info-section-icon"
+								xmlns="http://www.w3.org/2000/svg"
+								height="24px"
+								width="24px"
+								viewBox="0 -960 960 960"
+								fill="currentColor"
+								aria-hidden="true"
+								focusable="false"
+							>
+								<path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+							</svg>
+						</h2>
 						<p>
 							The RoboBoat competition is an international
 							competition where students design, build, and
@@ -177,16 +203,16 @@ import Layout from "../layouts/Layout.astro";
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen></iframe>
-			<!-- This is the only way to not have these blurry -->
-			<img
-				id="waves-bottom"
-				src="/waves_flipped.svg"
-				alt="Waves"
-				loading="lazy"
-				width="900"
-				height="224"
-			/>
 		</div>
+		<!-- This is the only way to not have these blurry -->
+		<img
+			id="waves-bottom"
+			src="/waves_flipped.svg"
+			alt="Waves"
+			loading="lazy"
+			width="900"
+			height="224"
+		/>
 
 		<style>
 			main {
@@ -263,6 +289,8 @@ import Layout from "../layouts/Layout.astro";
 				max-width: 1400px;
 				margin-bottom: 3em;
 				align-items: center;
+				padding: 0 2rem;
+				box-sizing: border-box;
 			}
 
 			.hero-section-reverse {
@@ -279,6 +307,19 @@ import Layout from "../layouts/Layout.astro";
 				font-size: 1.1em;
 				line-height: 1.6;
 				margin: 0;
+			}
+
+			.hero-text .inline-link,
+			.hero-text .inline-link:visited {
+				color: #b9d9ff;
+				text-decoration: underline;
+				text-decoration-thickness: 2px;
+				text-underline-offset: 3px;
+			}
+
+			.hero-text .inline-link:hover {
+				color: #e7f3ff;
+				text-decoration-color: #b9d9ff;
 			}
 
 			.hero-photos {
@@ -301,7 +342,6 @@ import Layout from "../layouts/Layout.astro";
 				height: 200px;
 				object-fit: cover;
 				border-radius: 8px;
-				transition: transform 0.2s ease;
 			}
 
 			.boat-photo {
@@ -336,6 +376,8 @@ import Layout from "../layouts/Layout.astro";
 				max-width: 1400px;
 				margin-bottom: 3rem;
 				flex-wrap: wrap;
+				padding: 0 2rem;
+				box-sizing: border-box;
 			}
 
 			.info-section {
@@ -357,6 +399,12 @@ import Layout from "../layouts/Layout.astro";
 				background-color: #3c68e0;
 				-webkit-box-shadow: 0px 0px 14px 16px #3c68e0;
 				box-shadow: 0px 0px 14px 16px #3c68e0;
+				color: white;
+				text-decoration: none;
+			}
+
+			.info-section:visited {
+				color: white;
 			}
 
 			.info-section:hover h2 {
@@ -381,6 +429,12 @@ import Layout from "../layouts/Layout.astro";
 				color: white;
 			}
 
+			.info-section-icon {
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 0.35em;
+			}
+
 			.info-content p {
 				color: white;
 				margin: 0;
@@ -392,12 +446,38 @@ import Layout from "../layouts/Layout.astro";
 				max-width: 768px;
 				aspect-ratio: 16 / 9;
 				border-radius: 12px;
+				display: block;
+				margin: 0 auto;
 			}
 
 			#waves-bottom {
 				width: 100%;
 				border-radius: 0;
 				background-color: rgb(var(--gray-lighter));
+			}
+
+			@media screen and (max-width: 1100px) {
+				.hero-section {
+					gap: 1.5rem;
+					margin-bottom: 2.5em;
+					padding: 0 1.5rem;
+				}
+
+				.hero-text {
+					max-width: 720px;
+				}
+
+				:global(.hero-photos .image img) {
+					height: 180px;
+				}
+
+				:global(.boat-photo .image img) {
+					height: 340px;
+				}
+
+				.info-section {
+					flex: 0 1 calc((min(100%, 1400px) - 2rem) / 2);
+				}
 			}
 
 			@media screen and (max-width: 800px) {
@@ -411,13 +491,18 @@ import Layout from "../layouts/Layout.astro";
 					content: url("/waves_flipped_mobile.svg");
 				}
 
-				#post-waves {
-					padding: 1.5em 1em;
-				}
-
 				.hero-section {
 					flex-direction: column;
 					gap: 1.5rem;
+					padding: 0 1rem;
+				}
+
+				.hero-photos-secondary {
+					display: none;
+				}
+
+				.boat-section .boat-photo {
+					order: -1;
 				}
 
 				.hero-text p {
@@ -425,9 +510,18 @@ import Layout from "../layouts/Layout.astro";
 				}
 
 				.hero-photos {
-					grid-template-columns: 1fr;
-					max-width: 350px;
+					grid-template-columns: repeat(2, 1fr);
+					max-width: 600px;
+					width: 100%;
 					margin: 0 auto;
+				}
+
+				:global(.hero-photos .image img) {
+					height: 160px;
+				}
+
+				:global(.boat-photo .image img) {
+					height: 300px;
 				}
 
 				#intro-text {
@@ -436,19 +530,20 @@ import Layout from "../layouts/Layout.astro";
 				}
 
 				.info-sections {
-					width: 95%;
-					gap: 2rem;
+					gap: 1.25rem;
+					padding: 0 1rem;
 				}
 
 				.info-section {
 					flex-direction: column;
 					gap: 1rem;
+					flex: 1 1 100%;
 				}
 
 				.info-section img {
 					width: 100%;
 					height: auto;
-					max-width: 350px;
+					max-width: 520px;
 					align-self: center;
 				}
 
@@ -476,7 +571,38 @@ import Layout from "../layouts/Layout.astro";
 				}
 
 				iframe {
-					width: 100%;
+					width: calc(100% - 2rem);
+				}
+			}
+
+			@media screen and (max-width: 520px) {
+				.hero-section {
+					padding: 0 0.75rem;
+				}
+
+				.hero-photos {
+					grid-template-columns: 1fr;
+					max-width: 420px;
+				}
+
+				.hero-photos-secondary {
+					display: none;
+				}
+
+				:global(.hero-photos .image img) {
+					height: 200px;
+				}
+
+				:global(.boat-photo .image img) {
+					height: 260px;
+				}
+
+				.info-sections {
+					padding: 0 0.75rem;
+				}
+
+				iframe {
+					width: calc(100% - 1.5rem);
 				}
 			}
 		</style>

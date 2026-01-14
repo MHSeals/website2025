@@ -25,7 +25,7 @@ import Layout from "../layouts/Layout.astro";
 					</p>
 				</div>
 				<div class="hero-photo">
-					<Image image="/2025team.jpg" description="2025 Team" showDescription={false} />
+					<Image image="/team_with_check.jpg" description="2025 Team" showDescription={false} />
 				</div>
 			</div>
 
@@ -125,11 +125,16 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</div>
 
-		<div class="leadership-section">
-			<h3><a href="/captains">Meet Our Leadership</a></h3>
-			<p>
-				Learn more about the captains and leaders who guide each department and coordinate our team's efforts.
-			</p>
+		<div class="department-section">
+			<div class="department-photo">
+				<Image image="/teams/officers.png" description="Team Officers" showDescription={false} />
+			</div>
+			<div class="department-text">
+				<h3><a href="/captains">Meet Our Leadership</a></h3>
+				<p>
+					Learn more about the captains and leaders who guide each department and coordinate our team's efforts.
+				</p>
+			</div>
 		</div>
 	</main>
 </Layout>
@@ -158,16 +163,18 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.content-wrapper {
-		width: 100%;
-		max-width: 1400px;
-		padding: 1em 2rem 3em 2rem;
+		--page-gutter: clamp(1rem, 4vw, 2rem);
+		width: min(1400px, calc(100% - (2 * var(--page-gutter))));
+		margin: 0 auto;
+		padding: 0 0 3em 0;
+		box-sizing: border-box;
 	}
 
 	.hero-section {
 		display: flex;
 		flex-direction: row;
 		gap: 2rem;
-		margin: 2rem 0 3em 0;
+		margin: 0 0 3em 0;
 		align-items: center;
 	}
 
@@ -177,6 +184,7 @@ import Layout from "../layouts/Layout.astro";
 
 	.hero-text {
 		flex: 1;
+		min-width: 0;
 	}
 
 	.hero-photo {
@@ -216,6 +224,7 @@ import Layout from "../layouts/Layout.astro";
 
 	.department-text {
 		flex: 1;
+		min-width: 0;
 	}
 
 	.department-text h3 {
@@ -239,38 +248,72 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.leadership-section {
-		text-align: center;
 		margin: 4rem 0 2rem 0;
-		padding: 2rem;
-		background-color: rgba(255, 255, 255, 0.05);
-		border-radius: 12px;
 	}
 
-	.leadership-section h3 {
-		margin-top: 0;
+	.leadership-section .department-text {
+		text-align: left;
 	}
 
-	.leadership-section h3 a {
-		color: inherit;
-		text-decoration: none;
-		border-bottom: 2px solid currentColor;
-		transition: color 0.2s;
-	}
-
-	.leadership-section h3 a:hover {
-		color: var(--coral-pink);
+	@media (max-width: 1100px) {
+		.section-title {
+			font-size: 1.8em;
+		}
 	}
 
 	@media (max-width: 800px) {
 		.hero-section,
+		.hero-section.reverse,
 		.department-section,
 		.department-section.reverse {
 			flex-direction: column;
+			gap: 1.25rem;
+			margin: 1.5rem 0 2.25em 0;
+			align-items: stretch;
+		}
+
+		.hero-text,
+		.department-text {
+			text-align: left;
+		}
+
+		.hero-photo,
+		.department-photo {
+			order: -1;
 		}
 
 		.hero-photo,
 		.department-photo {
 			max-width: 100%;
+		}
+
+		.section-title {
+			margin: 2.5rem 0 1rem 0;
+			font-size: 1.6em;
+		}
+
+		.section-intro {
+			font-size: 1em;
+			margin: 0 auto 2.25rem auto;
+			padding: 0 0.75rem;
+		}
+
+		.leadership-section {
+			padding: 1.5rem;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.hero-section,
+		.hero-section.reverse,
+		.department-section,
+		.department-section.reverse {
+			gap: 1rem;
+			margin: 1.25rem 0 2em 0;
+		}
+
+		.section-title {
+			font-size: 1.45em;
 		}
 	}
 
