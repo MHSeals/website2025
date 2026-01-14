@@ -1,21 +1,40 @@
 ---
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import Image from '../../components/Image.astro';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = (await getCollection('blog')).sort(
-	// Sort by date
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).filter(
+const allPosts = (await getCollection('blog')).filter(
 	// Remove posts that start with a -
 	(post) => !post.slug.startsWith('-')
+);
+
+const postsBySlug = new Map();
+for (const post of allPosts) {
+	const existing = postsBySlug.get(post.slug);
+	if (!existing) {
+		postsBySlug.set(post.slug, post);
+		continue;
+	}
+	if (post.id.endsWith('.mdx') && !existing.id.endsWith('.mdx')) {
+		postsBySlug.set(post.slug, post);
+	}
+}
+
+const posts = Array.from(postsBySlug.values()).sort(
+	// Sort by date
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <Layout page_title='Blog'>
 	<main data-pagefind-body>
 		<section>
-			<h2 class="alt-message" hidden data-pagefind-ignore>It looks like there are no posts yet!</h2>
+			{posts.length === 0 && (
+				<h2 class="alt-message" data-pagefind-ignore>
+					It looks like there are no posts yet!
+				</h2>
+			)}
 			<ul>
 				{
 					posts.map((post) => (
@@ -35,16 +54,6 @@ const posts = (await getCollection('blog')).sort(
 		</section>
 	</main>
 </Layout>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const altMessage = document.querySelector('.alt-message');
-		const posts = document.querySelectorAll('ul li');
-		if (posts.length === 0) {
-			altMessage.removeAttribute('hidden');
-		}
-	});
-</script>
 
 <style>
 	main {
@@ -76,13 +85,16 @@ const posts = (await getCollection('blog')).sort(
 		margin-bottom: 1rem;
 		text-align: center;
 	}
-	ul li:first-child img {
+	ul li:first-child :global(img) {
 		width: 100%;
 	}
 	ul li:first-child .title {
 		font-size: 2.369rem;
 	}
-	ul li img {
+	ul li :global(.image) {
+		margin-top: 0;
+	}
+	ul li :global(img) {
 		margin-bottom: 0.5rem;
 		border-radius: 12px;
 		transition: box-shadow 0.2s ease;
@@ -110,7 +122,7 @@ const posts = (await getCollection('blog')).sort(
 	ul li:hover .date {
 		color: rgb(var(--coral-pink));
 	}
-	ul a:hover img {
+	ul a:hover :global(img) {
 		box-shadow: var(--box-shadow);
 	}
 	.alt-message {

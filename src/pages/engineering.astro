@@ -1,12 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Image from "../components/Image.astro";
+
+const galleryImages = [
+  {
+    image: "/mech-e/IMG_7611.jpeg",
+    description: "Mechanical Engineering build photo",
+  },
+  {
+    image: "/mech-e/IMG_8155.jpeg",
+    description: "Mechanical Engineering build photo",
+  },
+  {
+    image: "/mech-e/IMG_8195.jpeg",
+    description: "Mechanical Engineering build photo",
+  },
+];
 ---
 
-<Layout page_title="Engineering">
+<Layout page_title="Mechanical Engineering">
   <main data-pagefind-body>
     <h1 class="page-title"><img src="/emojis/woman-construction-worker-medium-skin-tone.svg"></img>Mechanical Engineering</h1>
     <p>
-      Our Engineering Department is responsible for designing, building, and refining the physical structure of our autonomous boat, turning ideas into hardware that performs in real water and in competition.
+      Our Mechanical Engineering Department is responsible for designing, building, and refining the physical structure of our autonomous boat, turning ideas into hardware that performs in real water and in competition.
     </p>
     
     <h2>What We Do</h2>
@@ -20,6 +36,14 @@ import Layout from "../layouts/Layout.astro";
     <p>
       Using industry-standard CAD tools, we model our designs before building prototypes with tools like CNC machines, 3D printers, and laser cutters.
     </p>
+
+    <Image
+      image="/blastoise-nobg.png"
+      description="Blastoise boat CAD Model"
+      loading="lazy"
+      decoding="async"
+      wrapperStyle="max-width: 70%"
+    />
     
     <h3>Fabrication & Assembly</h3>
     <p>
@@ -40,5 +64,61 @@ import Layout from "../layouts/Layout.astro";
       <li>We work with CS to mount and protect the computing hardware that enables autonomy.</li>
       <li>We coordinate with Electrical to integrate power distribution and signal lines.</li>
     </ul>
+
+    <section class="mech-gallery" aria-label="Mechanical Engineering photos">
+      <div class="mech-gallery-grid">
+        {galleryImages.map(({ image, description }) => (
+          <Image
+            image={image}
+            description={description}
+            showDescription={false}
+            loading="lazy"
+            decoding="async"
+            wrapperClass="mech-gallery-item"
+          />
+        ))}
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .mech-gallery {
+    margin-top: 1rem;
+  }
+
+  .mech-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .mech-gallery-grid :global(.mech-gallery-item) {
+    margin-top: 0;
+  }
+
+  .mech-gallery-grid :global(.mech-gallery-item a) {
+    display: block;
+  }
+
+  .mech-gallery-grid :global(.mech-gallery-item img) {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 900px) {
+    .mech-gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .mech-gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

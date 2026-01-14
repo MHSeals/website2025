@@ -11,34 +11,41 @@ import Layout from "../layouts/Layout.astro";
 			</h1>
 
 			<div class="hero-section">
-			<div class="hero-text">
-				<h3>From Dream to Reality</h3>
-				<p>
-					In 2018, a handful of ambitious students with a shared passion for
-					robotics and engineering gathered around a simple idea: "What if we
-					could build a boat that thinks for itself?" After discovering the
-					prestigious RobotX competition, they were captivated by the
-					challenge—and yes, perhaps also by the prospect of competing in
-					Hawaii. Recognizing the steep learning curve, these pioneers
-					strategically chose to begin with the Roboboat competition as their
-					entry point into the world of autonomous marine robotics.
-				</p>
-				<p>
-					Since that moment, we have competed in the Roboboat competition 4
-					times, improving our boat more and more with each iteration. What
-					began as a rudimentary prototype has evolved into an increasingly
-					sophisticated autonomous vessel, with each competition providing
-					invaluable lessons and opportunities for growth. Our team has
-					expanded from those initial founding members to a diverse group of
-					over 60 students, all contributing their unique talents to our
-					shared mission of pushing the boundaries of marine autonomy.
-				</p>
+				<div class="hero-text">
+					<h3>From Dream to Reality</h3>
+					<p>
+						In 2018, a handful of ambitious students with a shared passion for
+						robotics and engineering gathered around a simple idea: "What if we
+						could build a boat that thinks for itself?" After discovering the
+						prestigious RobotX competition, they were captivated by the
+						challenge—and yes, perhaps also by the prospect of competing in
+						Hawaii. Recognizing the steep learning curve, these pioneers
+						strategically chose to begin with the Roboboat competition as their
+						entry point into the world of autonomous marine robotics.
+					</p>
+				</div>
+				<div class="hero-photo">
+					<Image image="/2025team.jpg" description="2025 Team" showDescription={false} />
+				</div>
 			</div>
-			<div class="hero-photos">
-				<Image image="/2025team.jpg" description="2025 Team" showDescription={false} />
-				<Image image="/blog/2024-breakdown/awards.jpg" description="Award Ceremony" showDescription={false} />
+
+			<div class="hero-section reverse">
+				<div class="hero-text">
+					<p>
+						Since that moment, we have competed in the Roboboat competition 4
+						times, improving our boat more and more with each iteration. What
+						began as a rudimentary prototype has evolved into an increasingly
+						sophisticated autonomous vessel, with each competition providing
+						invaluable lessons and opportunities for growth. Our team has
+						expanded from those initial founding members to a diverse group of
+						over 60 students, all contributing their unique talents to our
+						shared mission of pushing the boundaries of marine autonomy.
+					</p>
+				</div>
+				<div class="hero-photo">
+					<Image image="/blog/2024-breakdown/awards.jpg" description="Award Ceremony" showDescription={false} />
+				</div>
 			</div>
-		</div>
 
 		<h2 class="section-title">Our Structure: Many Minds, One Mission</h2>
 		<p class="section-intro">
@@ -68,9 +75,9 @@ import Layout from "../layouts/Layout.astro";
 
 		<div class="department-section reverse">
 			<div class="department-text">
-				<h3><a href="/engineering">Engineering Team</a></h3>
+				<h3><a href="/engineering">Mechanical Engineering Team</a></h3>
 				<p>
-					The Engineering department crafts the physical embodiment of our
+					The Mechanical Engineering department crafts the physical embodiment of our
 					ideas. These innovative designers and builders tackle challenges
 					from hydrodynamics to structural integrity, creating vessels that
 					are both robust and agile. Their iterative prototyping process has
@@ -79,7 +86,7 @@ import Layout from "../layouts/Layout.astro";
 				</p>
 			</div>
 			<div class="department-photo">
-				<Image image="/teams/meche.png" description="Engineering Team" showDescription={false} />
+				<Image image="/teams/meche.png" description="Mechanical Engineering Team" showDescription={false} />
 			</div>
 		</div>
 
@@ -124,7 +131,6 @@ import Layout from "../layouts/Layout.astro";
 				Learn more about the captains and leaders who guide each department and coordinate our team's efforts.
 			</p>
 		</div>
-		</div>
 	</main>
 </Layout>
 
@@ -165,6 +171,10 @@ import Layout from "../layouts/Layout.astro";
 		align-items: center;
 	}
 
+	.hero-section.reverse {
+		flex-direction: row-reverse;
+	}
+
 	.hero-text {
 		flex: 1;
 	}
@@ -174,18 +184,8 @@ import Layout from "../layouts/Layout.astro";
 		max-width: 500px;
 	}
 
-	.hero-photos {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1rem;
-		flex: 1;
-		max-width: 500px;
-	}
-
-	.hero-photos img {
-		width: 100%;
-		height: auto;
-		border-radius: 8px;
+	:global(.hero-photo .image) {
+		margin-top: 0;
 	}
 
 	.section-title {

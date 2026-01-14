@@ -2,11 +2,14 @@
 interface Props extends Omit<astroHTML.JSX.ImgHTMLAttributes, 'src' | 'alt'> {
     image: string;
     description?: string;
-    link?: string;
+    link?: string | null;
     link_target?: string;
     showDescription?: boolean | string;
     wrapperClass?: string;
     wrapperStyle?: string;
+
+	/** Astro view transitions attribute passthrough. */
+	'transition:name'?: string;
 }
 
 let {
@@ -46,6 +49,11 @@ if (link === undefined) {
     
     .image img {
         max-width: 100%;
+        transition: transform 0.2s ease;
+    }
+
+    .image img:hover {
+        transform: scale(1.02);
     }
 
     .image p {

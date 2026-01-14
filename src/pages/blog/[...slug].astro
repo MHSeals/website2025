@@ -8,7 +8,19 @@ export async function getStaticPaths() {
 	// if post name starts with - it will be ignored
 	posts = posts.filter((post) => !post.slug.startsWith('-'));
 
-	return posts.map((post) => ({
+	const postsBySlug = new Map();
+	for (const post of posts) {
+		const existing = postsBySlug.get(post.slug);
+		if (!existing) {
+			postsBySlug.set(post.slug, post);
+			continue;
+		}
+		if (post.id.endsWith('.mdx') && !existing.id.endsWith('.mdx')) {
+			postsBySlug.set(post.slug, post);
+		}
+	}
+
+	return Array.from(postsBySlug.values()).map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));

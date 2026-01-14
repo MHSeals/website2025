@@ -166,8 +166,9 @@ video {
 
 .page-title {
   transition: transform 0.2s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  width: fit-content;
 }
 
 .page-title:hover {

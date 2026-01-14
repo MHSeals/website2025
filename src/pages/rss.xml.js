@@ -7,6 +7,20 @@ export async function GET(context) {
 
 	posts = posts.filter((post) => !post.slug.startsWith('-'));
 
+	const postsBySlug = new Map();
+	for (const post of posts) {
+		const existing = postsBySlug.get(post.slug);
+		if (!existing) {
+			postsBySlug.set(post.slug, post);
+			continue;
+		}
+		if (post.id.endsWith('.mdx') && !existing.id.endsWith('.mdx')) {
+			postsBySlug.set(post.slug, post);
+		}
+	}
+
+	posts = Array.from(postsBySlug.values());
+
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
