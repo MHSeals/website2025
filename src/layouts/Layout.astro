@@ -35,6 +35,11 @@ if (page_title) {
     <body>
         <div class="container">
             <Header />
+            <noscript>
+                <div class="noscript-banner" role="status">
+                    This site works better with JavaScript enabled.
+                </div>
+            </noscript>
             <layout_main class:list={[{ 'full-width': fullWidth }]}>
                 <slot />
             </layout_main>
@@ -63,5 +68,16 @@ if (page_title) {
 
     footer {
         margin-top: auto;
+    }
+
+    .noscript-banner {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.75em 1em;
+        background: rgb(var(--gray-lighter));
+        border-bottom: 1px solid rgb(var(--gray-light));
+        color: rgb(var(--gray-dark));
+        text-align: center;
+        font-size: 0.95rem;
     }
 </style>

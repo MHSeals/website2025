@@ -101,43 +101,89 @@ import { SITE_TITLE } from "../consts";
     Swetrix.trackViews();
     Swetrix.trackErrors();
 
+    const mobileLinks = document.getElementById("mobile-links") as HTMLElement | null;
+    const hamburgerButton = document.getElementById("hamburger") as HTMLElement | null;
+    const headerSearch = document.getElementById("header_search") as HTMLInputElement | null;
+    const headerSearchButton = document.getElementById("header_search_button") as HTMLElement | null;
+
     function hamburger() {
-      var x = document.getElementById("mobile-links");
-      if (x.style.display == "flex") {
-        x.style.display = "none";
+      if (!mobileLinks) return;
+      if (mobileLinks.style.display == "flex") {
+        mobileLinks.style.display = "none";
       } else {
-        x.style.display = "flex";
+        mobileLinks.style.display = "flex";
       }
     }
 
     function animateSearchIcon() {
-      const searchIcon = document
-        .getElementById("header_search_button")
-        .querySelector("i");
+      const searchIcon = headerSearchButton?.querySelector("i");
+      if (!searchIcon) return;
       searchIcon.classList.add("animate");
       setTimeout(() => searchIcon.classList.remove("animate"), 500);
     }
 
-    document.getElementById("hamburger").addEventListener("click", hamburger);
+    hamburgerButton?.addEventListener("click", hamburger);
+
+    function syncHeaderSearchFromUrl() {
+      if (!headerSearch) return;
+      const url = new URL(window.location.href);
+      const q = url.searchParams.get("q") ?? "";
+      if (headerSearch.value !== q) headerSearch.value = q;
+    }
+
+    function isSearchPage() {
+      const path = window.location.pathname;
+      return path === "/search" || path === "/search/";
+    }
+
+    function setQueryParamQ(value) {
+      const nextUrl = new URL(window.location.href);
+      if (value) {
+        nextUrl.searchParams.set("q", value);
+      } else {
+        nextUrl.searchParams.delete("q");
+      }
+      window.history.replaceState({}, "", nextUrl);
+    }
+
+    // Initial sync from the current URL.
+    syncHeaderSearchFromUrl();
+
+    // Bind sync listeners once (the element persists across transitions).
+    if (headerSearch && headerSearch.dataset.qSyncBound !== "true") {
+      headerSearch.dataset.qSyncBound = "true";
+
+      window.addEventListener("search:q-changed", (e) => {
+        const q = (e as CustomEvent<{ q?: string }>).detail?.q ?? "";
+        if (headerSearch.value !== q) headerSearch.value = q;
+      });
+
+      // If you're already on /search, typing in the header should update the pagefind UI.
+      headerSearch.addEventListener("input", () => {
+        if (!isSearchPage()) return;
+        const q = headerSearch.value ?? "";
+        setQueryParamQ(q);
+        window.dispatchEvent(new CustomEvent("search:q-changed", { detail: { q } }));
+      });
+
+      // Back/forward navigation.
+      window.addEventListener("popstate", syncHeaderSearchFromUrl);
+    }
 
     function executeSearch() {
       animateSearchIcon();
-      navigate("/search?q=" + document.getElementById("header_search").value, {history: "push"});
+      navigate("/search?q=" + (headerSearch?.value ?? ""), {history: "push"});
     }
 
-    document
-      .getElementById("header_search")
-      .addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          executeSearch();
-        }
-      });
-
-    document
-      .getElementById("header_search_button")
-      .addEventListener("click", function () {
+    headerSearch?.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
         executeSearch();
-      });
+      }
+    });
+
+    headerSearchButton?.addEventListener("click", function () {
+      executeSearch();
+    });
   });
 </script>
 <style>

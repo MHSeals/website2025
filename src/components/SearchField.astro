@@ -3,30 +3,81 @@ import Search from "astro-pagefind/components/Search";
 ---
 
 <script lang="js">
-  window.addEventListener("DOMContentLoaded", () => {
-    const search = document.querySelector(`#search input`);
+  console.log("SearchField component loaded");
+  const SEARCH_INPUT_SELECTOR = "#search input";
+
+  function waitForElement(selector, { timeoutMs = 4000 } = {}) {
+    const start = performance.now();
+
+    return new Promise((resolve) => {
+      function check() {
+        const el = document.querySelector(selector);
+        if (el) return resolve(el);
+        if (performance.now() - start > timeoutMs) return resolve(null);
+        requestAnimationFrame(check);
+      }
+
+      check();
+    });
+  }
+
+  async function initSearchField() {
+    console.log("astro:page-load event fired in SearchField");
+
+    const search = await waitForElement(SEARCH_INPUT_SELECTOR, { timeoutMs: 6000 });
     if (!search) {
+      console.warn("Search input not found");
       return;
     }
 
+    if (search.dataset.urlSyncBound === "true") {
+      return;
+    }
+    search.dataset.urlSyncBound = "true";
+
     search.focus();
 
-    const url = new URL(window.location);
+    const url = new URL(window.location.href);
     const q = url.searchParams.get("q");
     console.log("q =", q);
 
-    if (q) {
+    if (q && search.value !== q) {
       search.value = q;
-      search.dispatchEvent(new Event("input"));
+      search.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+
+    // Keep other search UIs (e.g. header search) in sync.
+    window.dispatchEvent(new CustomEvent("search:q-changed", { detail: { q: q ?? "" } }));
+
+    if (search.dataset.qSyncListenBound !== "true") {
+      search.dataset.qSyncListenBound = "true";
+
+      window.addEventListener("search:q-changed", (e) => {
+        const nextQ = (e instanceof CustomEvent && e.detail?.q != null) ? String(e.detail.q) : "";
+        if (search.value !== nextQ) {
+          search.value = nextQ;
+          // Trigger Pagefind UI update.
+          search.dispatchEvent(new Event("input", { bubbles: true }));
+        }
+      });
     }
 
     search.addEventListener("input", (e) => {
       const value = e.target.value;
-      const url = new URL(window.location);
-      url.searchParams.set("q", value);
-      window.history.replaceState({}, "", url);
+      const nextUrl = new URL(window.location.href);
+      if (value) {
+        nextUrl.searchParams.set("q", value);
+      } else {
+        nextUrl.searchParams.delete("q");
+      }
+      window.history.replaceState({}, "", nextUrl);
+
+      window.dispatchEvent(new CustomEvent("search:q-changed", { detail: { q: value } }));
     });
-  });
+  }
+
+  // Astro dispatches lifecycle events on `document`, not `window`.
+  document.addEventListener("astro:page-load", initSearchField);
   
 </script>
 
