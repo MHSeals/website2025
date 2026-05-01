@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'MHS Seals';
 export const SITE_DESCRIPTION = 'MHS Seals Roboboat Team';
+
